@@ -1,5 +1,5 @@
-#ifndef DATA_STRUCTURE_SELECTION_HEAP_SORT_H_
-#define DATA_STRUCTURE_SELECTION_HEAP_SORT_H_
+#ifndef DATA_STRUCTURE_HEAP_SORT_H_
+#define DATA_STRUCTURE_HEAP_SORT_H_
 
 #include <vector>
 
@@ -103,4 +103,4 @@ void HeapSort<T>::m_swap(T& A, T& B) {
 	B = t;
 }
 
-#endif // DATA_STRUCTURE_SELECTION_HEAP_SORT_H_
+#endif // DATA_STRUCTURE_HEAP_SORT_H_

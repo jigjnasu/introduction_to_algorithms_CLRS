@@ -1,5 +1,5 @@
-#ifndef DATA_STRUCTURE_SELECTION_QUICK_SORT_H_
-#define DATA_STRUCTURE_SELECTION_QUICK_SORT_H_
+#ifndef DATA_STRUCTURE_QUICK_SORT_H_
+#define DATA_STRUCTURE_QUICK_SORT_H_
 
 #include <vector>
 
@@ -95,4 +95,4 @@ void QuickSort<T>::m_swap(T& A, T& B) {
 	B = t;
 }
 
-#endif // DATA_STRUCTURE_SELECTION_QUICK_SORT_H_
+#endif // DATA_STRUCTURE_QUICK_SORT_H_
