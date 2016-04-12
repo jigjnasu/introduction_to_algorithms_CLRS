@@ -2,6 +2,7 @@
 #define DATA_STRUCTURE_QUICK_SORT_RANDOM_H_
 
 #include <vector>
+#include <cstdlib>
 
 // In this algorithm, the piviot will not be always last one,
 // It will generate a random number between start and end, and that will be random pivot point.
