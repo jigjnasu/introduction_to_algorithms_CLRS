@@ -1,14 +1,14 @@
-#ifndef DATA_STRUCTURE_QUICK_SORT_H_
-#define DATA_STRUCTURE_QUICK_SORT_H_
+#ifndef DATA_STRUCTURE_QUICK_SORT_LUMUTO_H_
+#define DATA_STRUCTURE_QUICK_SORT_LUMUTO_H_
 
 #include <vector>
 
 // In this piviot is always the last element of the divided portion.
 template <typename T>
-class QuickSort {
+class QuickSortLumuto {
 public:
-	QuickSort();
-	~QuickSort();
+	QuickSortLumuto();
+	~QuickSortLumuto();
 
 	void SortAscending(std::vector<T>& V);
 	void SortDescending(std::vector<T>& V);
@@ -23,23 +23,23 @@ private:
 };
 
 template <typename T>
-QuickSort<T>::QuickSort() {}
+QuickSortLumuto<T>::QuickSortLumuto() {}
 
 template <typename T>
-QuickSort<T>::~QuickSort() {}
+QuickSortLumuto<T>::~QuickSortLumuto() {}
 
 template <typename T>
-void QuickSort<T>::SortAscending(std::vector<T>& V) {
+void QuickSortLumuto<T>::SortAscending(std::vector<T>& V) {
 	m_sort_ascending(V, 0, V.size() - 1);
 }
 
 template <typename T>
-void QuickSort<T>::SortDescending(std::vector<T>& V) {
+void QuickSortLumuto<T>::SortDescending(std::vector<T>& V) {
 	m_sort_descending(V, 0, V.size() - 1);
 }
 
 template <typename T>
-void QuickSort<T>::m_sort_ascending(std::vector<T>& V, const int& start, const int& end) {
+void QuickSortLumuto<T>::m_sort_ascending(std::vector<T>& V, const int& start, const int& end) {
 	if (start < end) {
 		const int mid = m_partition_ascending(V, start, end);
 		m_sort_ascending(V, start, mid - 1);
@@ -48,7 +48,7 @@ void QuickSort<T>::m_sort_ascending(std::vector<T>& V, const int& start, const i
 }
 
 template <typename T>
-void QuickSort<T>::m_sort_descending(std::vector<T>& V, const int& start, const int& end) {
+void QuickSortLumuto<T>::m_sort_descending(std::vector<T>& V, const int& start, const int& end) {
 	if (start < end) {
 		const int mid = m_partition_descending(V, start, end);
 		m_sort_descending(V, start, mid - 1);
@@ -56,8 +56,9 @@ void QuickSort<T>::m_sort_descending(std::vector<T>& V, const int& start, const 
 	}
 }
 
+// This is based on the algorithm of Lumuto
 template <typename T>
-int QuickSort<T>::m_partition_ascending(std::vector<T>& V, const int& start, const int& end) {
+int QuickSortLumuto<T>::m_partition_ascending(std::vector<T>& V, const int& start, const int& end) {
 	int i = start;
 	for (int j = start; j < end; ++j) {
 		if (V[j] <= V[end]) {
@@ -73,7 +74,7 @@ int QuickSort<T>::m_partition_ascending(std::vector<T>& V, const int& start, con
 }
 
 template <typename T>
-int QuickSort<T>::m_partition_descending(std::vector<T>& V, const int& start, const int& end) {
+int QuickSortLumuto<T>::m_partition_descending(std::vector<T>& V, const int& start, const int& end) {
 	int i = start;
 	for (int j = start; j < end; ++j) {
 		if (V[j] >= V[end]) {
@@ -89,10 +90,10 @@ int QuickSort<T>::m_partition_descending(std::vector<T>& V, const int& start, co
 }
 
 template <typename T>
-void QuickSort<T>::m_swap(T& A, T& B) {
+void QuickSortLumuto<T>::m_swap(T& A, T& B) {
 	T t = A;
 	A = B;
 	B = t;
 }
 
-#endif // DATA_STRUCTURE_QUICK_SORT_H_
+#endif // DATA_STRUCTURE_QUICK_SORT_LUMUTO_H_
