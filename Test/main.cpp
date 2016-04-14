@@ -1,5 +1,6 @@
 #include "QuickSortRandom.h"
 #include "QuickSortHoare.h"
+#include "QuickSortHoareInitial.h"
 #include "Common.h"
 
 void test_quick_sort_random() {
@@ -26,9 +27,24 @@ void test_quick_sort_hoare() {
 	common.PrintVector(V);	
 }
 
+// This is the initial Hoare parition algorithm implementation
+void test_quick_sort_hoare_initial() {
+	int A[] = {10, 2, 345, 28, 382, 1, 384, 892, 2, 381, 34, 58, 2, 82, 82, 94, 82, 1, 84, 82, 284, 82};
+	//int A[] = {5, 3, 2, 6, 4, 1, 3, 7};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+
+	QuickSortHoareInitial<int> sort;
+	Common<int> common;
+	common.PrintVector(V);
+	sort.Sort(V);
+	common.PrintVector(V);	
+}
+
 int main() {
 	//test_quick_sort_random();
-	test_quick_sort_hoare();
+	//test_quick_sort_hoare();
+
+	test_quick_sort_hoare_initial();
 	
 	return 0;
 }

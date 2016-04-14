@@ -33,7 +33,7 @@ void QuickSortHoare<T>::m_sort(std::vector<T>& V, const int& start, const int& e
 	int i = start;
 	int j = end;
 	const T piviot = V[(start + end) / 2];
-	
+
 	do {
 		while (i < end && V[i] < piviot)
 			++i;
