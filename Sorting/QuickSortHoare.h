@@ -9,11 +9,10 @@ public:
 	QuickSortHoare();
 	~QuickSortHoare();
 
-	void SortAscending(std::vector<T>& V);
+	void Sort(std::vector<T>& V);
 
 private:
-	void m_sortAscending(std::vector<T>& V, const int& start, const int& end);
-	int m_hoareParitionAscending(std::vector<T>& V, const int& start, const int& end);
+	void m_sort(std::vector<T>& V, const int& start, const int& end);
 
 	void m_swap(T& A, T& B);
 };
@@ -25,32 +24,30 @@ template <typename T>
 QuickSortHoare<T>::~QuickSortHoare() {}
 
 template <typename T>
-void QuickSortHoare<T>::SortAscending(std::vector<T>& V) {
-	m_sortAscending(V, 0, V.size() - 1);
+void QuickSortHoare<T>::Sort(std::vector<T>& V) {
+	m_sort(V, 0, V.size() - 1);
 }
 
 template <typename T>
-void QuickSortHoare<T>::m_sortAscending(std::vector<T>& V, const int& start, const int& end) {
-	if (end - start < 2)
-		return;
-	const int mid = m_hoareParitionAscending(V, start, end);
-	m_sortAscending(V, start, mid);
-	m_sortAscending(V, mid, end);
-}
-
-template <typename T>
-int QuickSortHoare<T>::m_hoareParitionAscending(std::vector<T>& V, const int& start, const int& end) {
+void QuickSortHoare<T>::m_sort(std::vector<T>& V, const int& start, const int& end) {
 	int i = start;
 	int j = end;
-	while (1) {
-		do --j; while(V[j] > V[start]);
-		do ++i; while(V[i] < V[start]);
+	const T piviot = V[(start + end) / 2];
+	
+	do {
+		while (i < end && V[i] < piviot)
+			++i;
+		while (j > start && V[j] > piviot)
+			--j;
 
-		if (i < j)
-			m_swap(V[i], V[j]);
-		else
-			return j + 1;
-	}
+		if (i <= j)
+			m_swap(V[i++], V[j--]);
+	} while (i <= j);
+
+	if (start < j)
+		m_sort(V, start, j);
+	if (i < end)
+		m_sort(V, i, end);
 }
 
 template <typename T>
