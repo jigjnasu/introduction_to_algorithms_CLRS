@@ -1,3 +1,4 @@
+#include "CountingSort.h"
 #include "QuickSortRandom.h"
 #include "QuickSortHoare.h"
 #include "QuickSortHoareInitial.h"
@@ -40,11 +41,25 @@ void test_quick_sort_hoare_initial() {
 	common.PrintVector(V);	
 }
 
+// This is the test for Counting sort
+void test_counting_sort() {
+	int A[] = {9, 8, 2, 3, 4, 5, 3, 4, 4, 2, 1, 3, 3, 5, 6, 7, 0, 0, 0, 1, 2, 3, 4, 5, 6, 9, 8, 8, 3, 2};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+
+	Common<int> common;
+	CountingSort<int, 10> sort;
+	common.PrintVector(V);
+	sort.Sort(V);
+	common.PrintVector(V);
+}
+
 int main() {
 	//test_quick_sort_random();
 	//test_quick_sort_hoare();
 
-	test_quick_sort_hoare_initial();
+	//test_quick_sort_hoare_initial();
+
+	test_counting_sort();
 	
 	return 0;
 }
