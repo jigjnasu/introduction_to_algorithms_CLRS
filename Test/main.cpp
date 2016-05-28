@@ -71,9 +71,9 @@ int main() {
 
 	//test_quick_sort_hoare_initial();
 
-	//test_counting_sort();
+	test_counting_sort();
 
-	test_exercise82_4();
+	//test_exercise82_4();
 	
 	return 0;
 }
