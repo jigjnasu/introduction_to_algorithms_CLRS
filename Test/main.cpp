@@ -1,3 +1,4 @@
+#include "RadixSort.h"
 #include "CountingSort.h"
 #include "QuickSortRandom.h"
 #include "QuickSortHoare.h"
@@ -55,6 +56,18 @@ void test_counting_sort() {
 	common.PrintVector(V);
 }
 
+// This is the test for Radix Sort
+void test_radix_sort() {
+	int A[] = {981, 2831, 83, 18, 9, 183, 8482, 83, 123, 38, 8, 262, 3848, 12, 72, 73, 123, 848, 12, 84};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+
+	Common<int> common;
+	RadixSort<int> sort;
+	common.PrintVector(V);
+	sort.Sort(V);
+	common.PrintVector(V);		
+}
+
 // This is the solution for Exercise 8.2-4 from Introduction to Algorithms
 void test_exercise82_4() {
 	int A[] = {1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0};
@@ -68,11 +81,11 @@ void test_exercise82_4() {
 int main() {
 	//test_quick_sort_random();
 	//test_quick_sort_hoare();
-
 	//test_quick_sort_hoare_initial();
 
-	test_counting_sort();
-
+	//test_counting_sort();
+	test_radix_sort();
+	
 	//test_exercise82_4();
 	
 	return 0;
