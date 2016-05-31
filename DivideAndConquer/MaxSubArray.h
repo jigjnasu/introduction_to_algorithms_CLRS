@@ -1,3 +1,9 @@
+/*
+  Author @ Rakesh Kumar
+  Date @ May 31st, 2016
+  Divide and Conquer approach to solve find max sub array problem.
+ */
+
 #ifndef DATA_STRUCTURE_MAX_SUBARRAY_H_
 #define DATA_STRUCTURE_MAX_SUBARRAY_H_
 
