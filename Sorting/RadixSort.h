@@ -1,3 +1,9 @@
+/*
+  This is the implementation of Radix Sort, based on Introduction to Algorithms.
+  Author : Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date : June 4th, 2016
+ */
+
 #ifndef DATA_STRUCTURE_RADIX_SORT_H_
 #define DATA_STRUCTURE_RADIX_SORT_H_
 
