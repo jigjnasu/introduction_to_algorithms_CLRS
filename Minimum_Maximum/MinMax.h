@@ -8,6 +8,7 @@
 #ifndef DATA_STRUCTURE_MINIMUM_MAXIMUM_MIN_MAX_H_
 #define DATA_STRUCTURE_MINIMUM_MAXIMUM_MIN_MAX_H_
 
+#include <cstdio>
 #include <cstdlib>
 #include <vector>
 
@@ -29,6 +30,7 @@ public:
 
 private:
 	T m_smallest_number(std::vector<T>& V, const int& start, const int& end, const int& order);
+	T m_smallest_number_iterative(std::vector<T>& V, int start, int end, const int& order);
 	int m_partition(std::vector<T>& V, const int& start, const int& end);
 	void m_swap(T& A, T& B);
 };
@@ -170,7 +172,8 @@ T MinMax<T>::SecondMaximum(const std::vector<T>& V) {
 template <typename T>
 T MinMax<T>::SmallestNumber(const std::vector<T>& V, const int& order) {
 	std::vector<T> data = V;
-	return m_smallest_number(data, 0, data.size() - 1, order);
+	//return m_smallest_number(data, 0, data.size() - 1, order);
+	return m_smallest_number_iterative(data, 0, data.size() - 1, order);
 }
 
 template <typename T>
@@ -186,6 +189,24 @@ T MinMax<T>::m_smallest_number(std::vector<T>& V, const int& start, const int& e
 			m_smallest_number(V, start, mid - 1, order);
 		else
 			m_smallest_number(V, mid + 1, end, order);
+	}
+}
+
+template <typename T>
+T MinMax<T>::m_smallest_number_iterative(std::vector<T>& V, int start, int end, const int& order) {
+	while (1) {
+		if (start == end)
+			return V[start];
+		
+		if (start < end) {
+			const int mid = m_partition(V, start, end);
+			if (order - 1 == mid)
+				return V[mid];
+			else if (order - 1 < mid)
+				end = mid - 1;
+			else
+				start = mid + 1;
+		}
 	}
 }
 

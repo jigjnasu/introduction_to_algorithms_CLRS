@@ -119,7 +119,7 @@ void test_min_max() {
 void test_find_smallest_number() {
 	int A[] = {9, 1, 4, 5, 83, 82, 1, 838, 28, 284, 38, 12, 83, 234, 2, 81, 183, 73, 123, 84, 82, 27, 23, 84, 83, 27, 13};
 	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
-
+	
 	std::vector<int> V1 = V;
 	Common<int> common;
 	HeapSort<int> sort;
@@ -128,7 +128,7 @@ void test_find_smallest_number() {
 	common.PrintVector(V1);
 
 	MinMax<int> min_max;
-	const int order = 21;
+	const int order = 9;
 	printf("Smallest number at [%d] order == [%d]\n", order, min_max.SmallestNumber(V, order));
 }
 
