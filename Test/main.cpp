@@ -1,5 +1,6 @@
 #include "MinMax.h"
 #include "BucketSort.h"
+#include "HeapSort.h"
 #include "RadixSort.h"
 #include "CountingSort.h"
 #include "QuickSortRandom.h"
@@ -95,7 +96,7 @@ void test_bucket_sort() {
 
 // This is the test for Minimum and Maximum
 void test_min_max() {
-	int A[] = {9, 3, 8, 38, 1, 384, 84, 82, 82, 94, 1, 3, 56, 3, 8, 582, 24, 85, 2, 583, 83, 82, 4, 82, 842, 82, 38};
+	int A[] = {9, 31, 68, 38, 1, 384, 84, 812, 88, 94, 18, 3, 56, 39, 8, 582, 24, 85, 2, 583, 83, 852, 4, 82, 842, 832, 381};
 	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
 	
 	Common<int> common;
@@ -104,6 +105,8 @@ void test_min_max() {
 	MinMax<int> min_max;
 	printf("Minimum value == [%d]\n", min_max.Minimum(V));
 	printf("Maximum value == [%d]\n", min_max.Maximum(V));
+	printf("Second Minimum == [%d]\n", min_max.SecondMinimum(V));
+	printf("Second Maximum == [%d]\n", min_max.SecondMaximum(V));
 	
 	int min = 0;
 	int max = 0;

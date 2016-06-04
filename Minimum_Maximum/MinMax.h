@@ -8,6 +8,7 @@
 #ifndef DATA_STRUCTURE_MINIMUM_MAXIMUM_MIN_MAX_H_
 #define DATA_STRUCTURE_MINIMUM_MAXIMUM_MIN_MAX_H_
 
+#include <cstdio>
 #include <vector>
 
 template <typename T>
@@ -20,6 +21,9 @@ public:
 	T Maximum(const std::vector<T>& V);
 
 	void MinimumMaximum(const std::vector<T>& V, T& min, T& max);
+
+	T SecondMinimum(const std::vector<T>& V);
+	T SecondMaximum(const std::vector<T>& V);
 };
 
 template <typename T>
@@ -104,4 +108,55 @@ void MinMax<T>::MinimumMaximum(const std::vector<T>& V, T& min, T& max) {
 	}
 }
 
+template <typename T>
+T MinMax<T>::SecondMinimum(const std::vector<T>& V) {
+	T min        = 0;
+	T second_min = 0;
+
+	if (V[0] < V[1]) {
+		min        = V[0];
+		second_min = V[1];
+	} else {
+		min        = V[1];
+		second_min = V[0];
+	}
+	
+	for (std::size_t i = 2; i < V.size(); ++i) {
+		if (min > V[i]) {
+			second_min = min;
+			min = V[i];
+		}
+
+		if (V[i] > min &&  V[i] < second_min)
+			second_min = V[i];
+	}
+
+	return second_min;
+}
+
+template <typename T>
+T MinMax<T>::SecondMaximum(const std::vector<T>& V) {
+	T max        = 0;
+	T second_max = 0;
+
+	if (V[0] > V[1]) {
+		max        = V[0];
+		second_max = V[1];
+	} else {
+		max        = V[1];
+		second_max = V[0];
+	}
+
+	for (std::size_t i = 2; i < V.size(); ++i) {
+		if (max < V[i]) {
+			second_max = max;
+			max = V[i];
+		}
+
+		if (V[i] < max && V[i] > second_max)
+			second_max = V[i];
+	}
+
+	return second_max;
+}
 #endif // DATA_STRUCTURE_MINIMUM_MAXIMUM_MIN_MAX_H_
