@@ -1,3 +1,4 @@
+#include "BucketSort.h"
 #include "RadixSort.h"
 #include "CountingSort.h"
 #include "QuickSortRandom.h"
@@ -78,13 +79,27 @@ void test_exercise82_4() {
 	printf("Numner of Elements between [%d] and [%d] range == [%d]\n", start, end, numbers.NumberOfElements(start, end));
 }
 
+// This is the solution for Bucket Sort.
+void test_bucket_sort() {
+	int A[] = {90, 83, 71, 38, 84, 2, 34, 1, 32, 31, 2, 24, 5, 3, 84, 73, 84, 17, 38, 85, 23, 83, 4, 56, 73, 71, 74, 27, 72, 13};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+	
+	Common<int> common;
+	BucketSort<int> sort;
+	
+	common.PrintVector(V);
+	sort.Sort(V);
+	common.PrintVector(V);
+}
+
 int main() {
 	//test_quick_sort_random();
 	//test_quick_sort_hoare();
 	//test_quick_sort_hoare_initial();
 
 	//test_counting_sort();
-	test_radix_sort();
+	//test_radix_sort();
+	test_bucket_sort();
 	
 	//test_exercise82_4();
 	
