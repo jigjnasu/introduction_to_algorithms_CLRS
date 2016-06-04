@@ -1,3 +1,4 @@
+#include "MinMax.h"
 #include "BucketSort.h"
 #include "RadixSort.h"
 #include "CountingSort.h"
@@ -92,6 +93,25 @@ void test_bucket_sort() {
 	common.PrintVector(V);
 }
 
+// This is the test for Minimum and Maximum
+void test_min_max() {
+	int A[] = {9, 3, 8, 38, 1, 384, 84, 82, 82, 94, 1, 3, 56, 3, 8, 582, 24, 85, 2, 583, 83, 82, 4, 82, 842, 82, 38};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+	
+	Common<int> common;
+	common.PrintVector(V);
+
+	MinMax<int> min_max;
+	printf("Minimum value == [%d]\n", min_max.Minimum(V));
+	printf("Maximum value == [%d]\n", min_max.Maximum(V));
+	
+	int min = 0;
+	int max = 0;
+	min_max.MinimumMaximum(V, min, max);
+	printf("Minimum value == [%d]\n", min);
+	printf("Maximum value == [%d]\n", max);	
+}
+
 int main() {
 	//test_quick_sort_random();
 	//test_quick_sort_hoare();
@@ -99,9 +119,11 @@ int main() {
 
 	//test_counting_sort();
 	//test_radix_sort();
-	test_bucket_sort();
+	//test_bucket_sort();
 	
 	//test_exercise82_4();
+
+	test_min_max();
 	
 	return 0;
 }
