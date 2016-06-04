@@ -115,6 +115,23 @@ void test_min_max() {
 	printf("Maximum value == [%d]\n", max);	
 }
 
+// Testing the O(n) complexity to find the ith smallest number
+void test_find_smallest_number() {
+	int A[] = {9, 1, 4, 5, 83, 82, 1, 838, 28, 284, 38, 12, 83, 234, 2, 81, 183, 73, 123, 84, 82, 27, 23, 84, 83, 27, 13};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+
+	std::vector<int> V1 = V;
+	Common<int> common;
+	HeapSort<int> sort;
+	common.PrintVector(V1);
+	sort.SortAscending(V1);
+	common.PrintVector(V1);
+
+	MinMax<int> min_max;
+	const int order = 21;
+	printf("Smallest number at [%d] order == [%d]\n", order, min_max.SmallestNumber(V, order));
+}
+
 int main() {
 	//test_quick_sort_random();
 	//test_quick_sort_hoare();
@@ -126,7 +143,8 @@ int main() {
 	
 	//test_exercise82_4();
 
-	test_min_max();
-	
+	//test_min_max();
+
+	test_find_smallest_number();
 	return 0;
 }

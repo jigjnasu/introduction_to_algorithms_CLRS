@@ -8,7 +8,7 @@
 #ifndef DATA_STRUCTURE_MINIMUM_MAXIMUM_MIN_MAX_H_
 #define DATA_STRUCTURE_MINIMUM_MAXIMUM_MIN_MAX_H_
 
-#include <cstdio>
+#include <cstdlib>
 #include <vector>
 
 template <typename T>
@@ -24,6 +24,13 @@ public:
 
 	T SecondMinimum(const std::vector<T>& V);
 	T SecondMaximum(const std::vector<T>& V);
+
+	T SmallestNumber(const std::vector<T>& V, const int& order);
+
+private:
+	T m_smallest_number(std::vector<T>& V, const int& start, const int& end, const int& order);
+	int m_partition(std::vector<T>& V, const int& start, const int& end);
+	void m_swap(T& A, T& B);
 };
 
 template <typename T>
@@ -159,4 +166,53 @@ T MinMax<T>::SecondMaximum(const std::vector<T>& V) {
 
 	return second_max;
 }
+
+template <typename T>
+T MinMax<T>::SmallestNumber(const std::vector<T>& V, const int& order) {
+	std::vector<T> data = V;
+	return m_smallest_number(data, 0, data.size() - 1, order);
+}
+
+template <typename T>
+T MinMax<T>::m_smallest_number(std::vector<T>& V, const int& start, const int& end, const int& order) {
+	if (start == end)
+		return V[start];
+	
+	if (start < end) {
+		const int mid = m_partition(V, start, end);
+		if (order - 1 == mid)
+			return V[mid];
+		else if (order - 1 < mid)
+			m_smallest_number(V, start, mid - 1, order);
+		else
+			m_smallest_number(V, mid + 1, end, order);
+	}
+}
+
+template <typename T>
+int MinMax<T>::m_partition(std::vector<T>& V, const int& start, const int& end) {
+	// Make it a random piviot selection.
+	m_swap(V[rand() % (end - start + 1) + start], V[end]);
+		
+	int i = start;
+	for (int j = start; j < end; ++j) {
+		if (V[j] <= V[end]) {
+			if (i != j) {
+				m_swap(V[i], V[j]);
+			}
+			++i;
+		}
+	}
+	m_swap(V[i], V[end]);
+
+	return i;
+}
+
+template <typename T>
+void MinMax<T>::m_swap(T& A, T& B) {
+	T t = A;
+	A = B;
+	B = t;
+}
+
 #endif // DATA_STRUCTURE_MINIMUM_MAXIMUM_MIN_MAX_H_
