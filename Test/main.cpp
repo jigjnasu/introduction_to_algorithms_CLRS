@@ -115,6 +115,7 @@ void test_min_max() {
 	printf("Maximum value == [%d]\n", max);	
 }
 
+#if 0
 // Testing the O(n) complexity to find the ith smallest number
 void test_find_smallest_number() {
 	int A[] = {9, 1, 4, 5, 83, 82, 1, 838, 28, 284, 38, 12, 83, 234, 2, 81, 183, 73, 123, 84, 82, 27, 23, 84, 83, 27, 13};
@@ -131,6 +132,7 @@ void test_find_smallest_number() {
 	const int order = 9;
 	printf("Smallest number at [%d] order == [%d]\n", order, min_max.SmallestNumber(V, order));
 }
+#endif
 
 int main() {
 	//test_quick_sort_random();
@@ -143,8 +145,8 @@ int main() {
 	
 	//test_exercise82_4();
 
-	//test_min_max();
+	test_min_max();
 
-	test_find_smallest_number();
+	//test_find_smallest_number();
 	return 0;
 }
