@@ -1,3 +1,4 @@
+#include "Select.h"
 #include "RandomSelect.h"
 #include "MinMax.h"
 #include "BucketSort.h"
@@ -133,6 +134,23 @@ void test_random_select() {
 	printf("Smallest number at [%d] index == [%d]\n", index, select.Select(V, index));
 }
 
+// Testing the O(n) complexity to find the ith smallest number
+void test_select() {
+	int A[] = {89, 82, 1, 8, 83, 95, 953, 13, 83, 23, 245, 35, 22, 135, 83, 45, 838, 4, 2, 123, 823, 71, 173, 731, 17, 34, 71, 173, 372, 234, 74, 27, 237, 223};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+	
+	std::vector<int> V1 = V;
+	Common<int> common;
+	HeapSort<int> sort;
+	sort.SortAscending(V1);
+	common.PrintVector(V1);
+
+	Select<int> select;
+	const int index = 24;
+	printf("Smallest number at [%d] index == [%d]\n", index, select.Find(V, index));
+}
+
+
 int main() {
 	//test_quick_sort_random();
 	//test_quick_sort_hoare();
@@ -146,6 +164,8 @@ int main() {
 
 	//test_min_max();
 
-	test_random_select();
+	//test_random_select();
+
+	test_select();
 	return 0;
 }
