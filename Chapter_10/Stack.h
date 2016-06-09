@@ -39,7 +39,7 @@ void Stack<T>::Push(const T& data) {
 template <typename T>
 T Stack<T>::Pop() {
 	if (m_isEmpty()) {
-		printf("Stack is underflow\n");
+		printf("Error: Stack is underflow\n");
 	} else {
 		--m_top;
 		return m_stack[m_top + 1];
