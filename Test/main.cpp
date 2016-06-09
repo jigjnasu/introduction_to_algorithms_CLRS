@@ -154,22 +154,31 @@ void test_select() {
 
 // Testing stack based on array / vector.
 void test_stack() {
-	Stack<int> stack;
-
-	stack.Push(90);
-	stack.Push(12);
-	stack.Push(198);
-	stack.Push(9);
+	Stack<int, 5> stack;
+	printf("------------------------------------------------------\n");
+	stack.Pop();
 	stack.Push(1);
+	stack.Push(2);
+	stack.Push(3);
 
-	while (stack.Size())
-		printf("%d\n", stack.Pop());
-
-	stack.Push(12);
-	stack.Push(56);
-
-	while (stack.Size())
-		printf("%d\n", stack.Pop());	
+	printf("%d\n", stack.Pop());
+	printf("%d\n", stack.Pop());
+	printf("%d\n", stack.Pop());
+	printf("------------------------------------------------------\n");
+	printf("------------------------------------------------------\n");
+	stack.Push(1);
+	stack.Push(2);
+	stack.Push(3);
+	stack.Push(4);
+	stack.Push(5);
+	stack.Push(6);	
+	printf("%d\n", stack.Pop());
+	printf("%d\n", stack.Pop());
+	printf("%d\n", stack.Pop());
+	printf("%d\n", stack.Pop());
+	printf("%d\n", stack.Pop());
+	printf("%d\n", stack.Pop());		
+	printf("------------------------------------------------------\n");
 }
 
 // Test for Queue based on generalize array
@@ -220,7 +229,7 @@ int main() {
 
 	//test_select();
 
-	//test_stack();
-	test_queue();
+	test_stack();
+	//test_queue();
 	return 0;
 }

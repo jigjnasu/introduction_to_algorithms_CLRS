@@ -56,7 +56,7 @@ T Queue<T, SIZE>::DeQueue() {
 		else
 			++m_head;
 
-		m_isFull = false;x
+		m_isFull = false;
 		return value;
 	}
 }
