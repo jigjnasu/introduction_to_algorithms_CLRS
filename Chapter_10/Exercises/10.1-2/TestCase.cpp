@@ -1,3 +1,12 @@
+/*
+  Introduction to algorithms, CLRS
+  Chapter 10, Elementry Data Structures
+  Test case for Exercise 10.1-2, implement two stacks in one single array.
+
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date : June 10th, 2016
+ */
+
 #include "Stack.h"
 
 int main() {

@@ -1,3 +1,12 @@
+/*
+  Introduction to algorithms, CLRS
+  Chapter 10, Elementry Data Structures
+  Exercise 10.1-2, implement two stacks in one single array.
+
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date : June 10th, 2016
+ */
+
 #ifndef DATA_STRUCTURE_CHAPTER_10_EXERCISE_10_1_1_STACK_H_
 #define DATA_STRUCTURE_CHAPTER_10_EXERCISE_10_1_1_STACK_H_
 
