@@ -1,5 +1,5 @@
-#ifndef DATA_STRUCTURE_CHAPTER_10_H_
-#define DATA_STRUCTURE_CHAPTER_10_H_
+#ifndef DATA_STRUCTURE_CHAPTER_10_STACK_H_
+#define DATA_STRUCTURE_CHAPTER_10_STACK_H_
 
 #include <cstdio>
 
@@ -43,4 +43,4 @@ T Stack<T, SIZE>::Pop() {
 	}
 }
 
-#endif // DATA_STRUCTURE_CHAPTER_10_H_
+#endif // DATA_STRUCTURE_CHAPTER_10_STACK_H_
