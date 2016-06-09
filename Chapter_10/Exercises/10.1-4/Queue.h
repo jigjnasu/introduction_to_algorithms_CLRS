@@ -1,6 +1,15 @@
+/*
+  Introduction to algorithms, CLRS
+  Chapter 10, Elementry Data Structures
+  Exercise 10.1-4, modify EnQueue to add over flow,
+  and modify DeQueue to add underflow
 
-#ifndef DATA_STRUCTURE_CHAPTER_10_QUEUE_H_
-#define DATA_STRUCTURE_CHAPTER_10_QUEUE_H_
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date : June 10th, 2016
+ */
+
+#ifndef DATA_STRUCTURE_CHAPTER_10_EXERCISE_10_1_4_STAC_H_
+#define DATA_STRUCTURE_CHAPTER_10_EXERCISE_10_1_4_STAC_H_
 
 #include <cstdio>
 
@@ -61,4 +70,4 @@ T Queue<T, SIZE>::DeQueue() {
 	}
 }
 
-#endif // DATA_STRUCTURE_CHAPTER_10_QUEUE_H_
+#endif // DATA_STRUCTURE_CHAPTER_10_EXERCISE_10_1_4_STAC_H_

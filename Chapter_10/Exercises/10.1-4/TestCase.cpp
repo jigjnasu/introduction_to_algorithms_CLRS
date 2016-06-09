@@ -1,3 +1,13 @@
+/*
+  Introduction to algorithms, CLRS
+  Chapter 10, Elementry Data Structures
+  Test case for Exercise 10.1-4, modify EnQueue to add over flow,
+  and modify DeQueue to add underflow
+
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date : June 10th, 2016
+ */
+
 #include "Queue.h"
 
 int main() {
