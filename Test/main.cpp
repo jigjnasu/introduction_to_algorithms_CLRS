@@ -1,3 +1,4 @@
+#include "Stack.h"
 #include "Select.h"
 #include "RandomSelect.h"
 #include "MinMax.h"
@@ -150,6 +151,26 @@ void test_select() {
 	printf("Smallest number at [%d] index == [%d]\n", index, select.Find(V, index));
 }
 
+// Testing stack based on array / vector.
+void test_stack() {
+	Stack<int> stack;
+
+	stack.Push(90);
+	stack.Push(12);
+	stack.Push(198);
+	stack.Push(9);
+	stack.Push(1);
+
+	while (stack.Size())
+		printf("%d\n", stack.Pop());
+
+	stack.Push(12);
+	stack.Push(56);
+
+	while (stack.Size())
+		printf("%d\n", stack.Pop());	
+}
+
 
 int main() {
 	//test_quick_sort_random();
@@ -166,6 +187,8 @@ int main() {
 
 	//test_random_select();
 
-	test_select();
+	//test_select();
+
+	test_stack();
 	return 0;
 }

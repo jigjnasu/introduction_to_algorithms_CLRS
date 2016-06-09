@@ -1,6 +1,6 @@
 TARGET = algos
 CC = g++
-INC = -I../Sorting -I../Common -I../Sorting/QuickSort -I../Introduction_To_Algorithms/Sorting_In_Linear_Time -I../Minimum_Maximum
+INC = -I../Sorting -I../Common -I../Sorting/QuickSort -I../Introduction_To_Algorithms/Sorting_In_Linear_Time -I../Minimum_Maximum -I../Chapter_10
 
 $(TARGET) : ../Test/main.cpp
 	$(CC) -g -c -Wall -fpermissive $(INC) ../Test/main.cpp
