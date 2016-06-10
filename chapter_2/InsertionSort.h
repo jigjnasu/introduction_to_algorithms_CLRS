@@ -31,7 +31,7 @@ template <typename T>
 InsertionSort<T>::~InsertionSort() {}
 
 template <typename T>
-void InsertionSort<T>::SortAscending(std::vector<T>& V) {
+void InsertionSort<T>::Sort(std::vector<T>& V) {
 	for (std::size_t i = 1; i < V.size(); ++i) {
 		int j = static_cast<int>(i);
 
@@ -43,7 +43,7 @@ void InsertionSort<T>::SortAscending(std::vector<T>& V) {
 }
 
 template <typename T>
-void InsertionSort<T>::SortDescending(std::vector<T>& V) {
+void InsertionSort<T>::SortReverse(std::vector<T>& V) {
 	for (std::size_t i = 1; i < V.size(); ++i) {
 		int j = static_cast<int>(i);
 
