@@ -17,8 +17,8 @@ public:
 	InsertionSort();
 	~InsertionSort();
 
-	void SortAscending(std::vector<T>& V);
-	void SortDescending(std::vector<T>& V);
+	void Sort(std::vector<T>& V);
+	void SortReverse(std::vector<T>& V);
 
 private:
 	void m_swap(T& A, T& B);
