@@ -1,3 +1,11 @@
+/*
+  Introduction to Algorithms
+  Chapter 10: Elementry Data Structures
+  Test case for Queue and Stack
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: June 10th, 2016
+ */
+
 #include "Queue.h"
 #include "Stack.h"
 
