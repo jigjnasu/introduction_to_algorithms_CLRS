@@ -1,3 +1,11 @@
+/*
+  Introduction to Algorithms
+  Chapter 10: Elementry Data Structures
+  Implementation Stack, based on array and finite size
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: June 10th, 2016
+ */
+
 #ifndef DATA_STRUCTURE_CHAPTER_10_STACK_H_
 #define DATA_STRUCTURE_CHAPTER_10_STACK_H_
 

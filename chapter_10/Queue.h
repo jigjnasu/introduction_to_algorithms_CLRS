@@ -1,3 +1,10 @@
+/*
+  Introduction to Algorithms
+  Chapter 10: Elementry Data Structures
+  Implementation Queue, based on array and finite size
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: June 10th, 2016
+ */
 
 #ifndef DATA_STRUCTURE_CHAPTER_10_QUEUE_H_
 #define DATA_STRUCTURE_CHAPTER_10_QUEUE_H_
