@@ -1,5 +1,13 @@
-#ifndef DATA_STRUCTURE_INSERTION_SORT_H_
-#define DATA_STRUCTURE_INSERTION_SORT_H_
+/*
+  Introduction to Algorithms, CLRS
+  Chapter 2, Getting Started
+  Insertion Sort implementation
+  Author : Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date : June 10th, 2016
+ */
+  
+#ifndef DATA_STRUCTURE_CHAPTER_1_INSERTION_SORT_H_
+#define DATA_STRUCTURE_CHAPTER_1_INSERTION_SORT_H_
 
 #include <vector>
 
@@ -53,4 +61,4 @@ void InsertionSort<T>::m_swap(T& A, T& B) {
 	B = t;
 }
 
-#endif // DATA_STRUCTURE_INSERTION_SORT_H_
+#endif // DATA_STRUCTURE_CHAPTER_1_INSERTION_SORT_H_
