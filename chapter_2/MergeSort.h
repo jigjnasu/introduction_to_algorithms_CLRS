@@ -1,3 +1,11 @@
+/*
+  Introduction to algorithms, CSLR
+  Chapter:2, Getting Started.
+  Implementation for Merge Sort.
+  Rakesh Kumar @ cpp.rakesh@gmail.com
+  June 11th, 2016
+ */
+
 #ifndef DATA_STRUCTURE_CHAPTER_2_MERGE_SORT_H_
 #define DATA_STRUCTURE_CHAPTER_2_MERGE_SORT_H_
 
