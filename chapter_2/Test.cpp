@@ -6,7 +6,8 @@
   Date : June 10th, 2016
  */
 
-#include "MergeSort.h"
+//#include "MergeSort.h"
+#include "MergeSortIterative.h"
 #include "InsertionSort.h"
 #include "../Common/Common.h"
 
