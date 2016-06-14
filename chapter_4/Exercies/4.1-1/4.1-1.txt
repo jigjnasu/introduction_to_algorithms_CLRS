@@ -1,1 +1,3 @@
-It will return sum of all the elements of a SET from SET[1 .... N].
+It will return the element with max value.
+Take an example, lets S {-1, -2, -3, -4} is the SET.
+Then as -1 will be returned as it maximum in the SET.
