@@ -7,13 +7,14 @@
  */
 
 #include "MaxSubArray.h"
+#include "MaxBrute.h"
 #include "../../../Common/Common.h"
 #include <cstdio>
 
-int main() {
+void test_max_sub_array() {
 	//int A[] = {-9, 1, 2, 3, -6, 9, 7, 82, 9, 1, 98, -97};
-	//int A[] = {-9, 1, 2, 3, -6, 91, 7, 82, 9, 1, 98, -97};
-	int A[] = {-9, 9};
+	int A[] = {-9, 1, 2, 3, -6, 91, 7, 82, 9, 1, 98, -97};
+	//int A[] = {-9, 9};
 	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
 
 	Common<int> common;
@@ -26,7 +27,31 @@ int main() {
 		printf("Input SET is validated\n");
 	else
 		printf("Input SET FAILED the validion test\n");
+	printf("--------------------------------------------------\n");	
+}
+
+void test_brute() {
+	//int A[] = {-9, 1, 2, 3, -6, 9, 7, 82, 9, 1, 98, -97};
+	int A[] = {-9, 1, 2, 3, -6, 91, 7, 82, 9, 1, 98, -97};
+	//int A[] = {-9, 9};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+
+	Common<int> common;
+	common.PrintVector(V);
+
+	MaxBrute<int> brute;
+
 	printf("--------------------------------------------------\n");
+	if (brute.Validate(V))
+		printf("Input SET is validated\n");
+	else
+		printf("Input SET FAILED the validion test\n");
+	printf("--------------------------------------------------\n");	
+}
+
+int main() {
+	test_max_sub_array();
+	test_brute();
 	
 	return 0;
 }

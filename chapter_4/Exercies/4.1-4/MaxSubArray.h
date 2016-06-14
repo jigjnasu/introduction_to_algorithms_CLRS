@@ -9,6 +9,7 @@
 #ifndef DATA_STRUCTURE_CHAPTER_4_4_1_4_MAX_SUB_ARRAY_H_
 #define DATA_STRUCTURE_CHAPTER_4_4_1_4_MAX_SUB_ARRAY_H_
 
+#include <cstdio>
 #include <vector>
 
 template <typename T>
@@ -61,6 +62,7 @@ bool MaxSubArray<T>::m_validate(const std::vector<T>& V, const int& start, const
 
 template <typename T>
 bool MaxSubArray<T>::m_crossValidate(const std::vector<T>& V, const int& start, const int& end) {
+	printf("start == [%d] || end == [%d]\n", start, end);
 	T sum = V[start];
 	for (int i = start + 1; i <= end; ++i ) {
 		sum += V[i];
