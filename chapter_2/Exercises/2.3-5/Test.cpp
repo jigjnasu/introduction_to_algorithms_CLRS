@@ -12,11 +12,12 @@
   And therefore time complexity will be O(log2(n)).
  */
 
-#include "Search.h"
+//#include "Search.h"
+#include "SearchIterative.h"
 #include "../../../Common/Common.h"
 #include <cstdio>
-
-int main() {
+#if 0
+void test_search() {
 	int A[] = {89, 18, 372, 828, 1, 327, 16, 84, 3, 848, 27, 8489, 37, 34, 16, 84, 74, 266, 17, 3778, 7};
 	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
 	Common<int> common;
@@ -27,7 +28,26 @@ int main() {
 	if (search.Find(V, key))
 		printf("[%d] is PRESNET in the SET\n", key);
 	else
+		printf("[%d] is NOT PRESNET in the SET\n", key);	
+}
+#endif
+void test_iterative_search() {
+	int A[] = {89, 18, 372, 828, 1, 327, 16, 84, 3, 848, 27, 8489, 37, 34, 16, 84, 74, 266, 17, 3778, 7};
+	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+	Common<int> common;
+	common.PrintVector(V);
+
+	Search<int> search;
+	int key = 94;
+	if (search.Find(V, key))
+		printf("[%d] is PRESNET in the SET\n", key);
+	else
 		printf("[%d] is NOT PRESNET in the SET\n", key);
+}
+
+int main() {
+	//test_search();
+	test_iterative_search();
 	
 	return 0;
 }

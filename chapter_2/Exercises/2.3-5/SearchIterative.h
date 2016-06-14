@@ -27,7 +27,7 @@ public:
 	bool Find(const std::vector<T>& V, const T& key);
 
 private:
-	bool m_find(const std::vector<T>& V, const T& key, const int& start, const int& end);
+	bool m_find(const std::vector<T>& V, const T& key, int start, int end);
 };
 
 template <typename T>
@@ -46,22 +46,23 @@ bool Search<T>::Find(const std::vector<T>& V, const T& key) {
 }
 
 template <typename T>
-bool Search<T>::m_find(const std::vector<T>& V, const T& key, const int& start, const int& end) {
-	// Base case for recursion
-	if (start == end) {
-		if (key == V[start])
-			return true;
-		else
-			return false;
-	} else {
-		const int mid = (start + end) / 2;
-		if (key == V[mid])
-			return true;
-		else if (key < V[mid])
-			m_find(V, key, start, mid - 1);
-		else
-			m_find(V, key, mid + 1, end);
-	}		
+bool Search<T>::m_find(const std::vector<T>& V, const T& key, int start, int end) {
+	while (1) {
+		if (start == end) {
+			if (key == V[start])
+				return true;
+			else
+				return false;
+		} else {
+			const int mid = (start + end) / 2;
+			if (key == V[mid])
+				return true;
+			else if (key < V[mid])
+				end = mid - 1;
+			else
+				start = mid + 1;
+		}
+	}
 }
 
 #endif // DATA_STRUCTURE_CHAPTER_2_2_3_5_SEARCH_H_
