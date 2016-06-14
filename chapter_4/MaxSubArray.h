@@ -43,7 +43,9 @@ void MaxSubArray<T>::m_maxSum(const std::vector<T>& V, T& max_sum, const int& st
 	T   cross_sum = 0;
 	
 	// If not the non recursive base case.
-	if (start < end) {
+	if (start == end) {
+		max_sum = V[start];
+	} else {
 		const int mid = (start + end) / 2;
 		m_maxSum(V, left_sum, start, mid);
 		m_maxSum(V, right_sum, mid + 1, end);

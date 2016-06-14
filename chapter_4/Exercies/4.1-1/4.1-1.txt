@@ -1,0 +1,1 @@
+It will return sum of all the elements of a SET from SET[1 .... N].
