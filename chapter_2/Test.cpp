@@ -7,7 +7,7 @@
  */
 
 //#include "MergeSort.h"
-#include "MergeSortIterative.h"
+#include "MergeSort.h"
 #include "InsertionSort.h"
 #include "../Common/Common.h"
 
