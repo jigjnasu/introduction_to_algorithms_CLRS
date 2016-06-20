@@ -1,0 +1,12 @@
+Question:
+1.1-1
+Give a real-world example that requires sorting or a real-world example that requires
+computing a convex hull.
+
+Answer:
+Sorting Example:
+The first example which is poping up in my mind is a dictionary.
+In dictionary every word is alphabetically sorted out.
+
+Convex Hull example:
+No idea.
