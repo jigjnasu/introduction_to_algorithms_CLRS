@@ -1,0 +1,16 @@
+Let's take example of an array, based on C / C++, language.
+
+Let's most of the data structure have four basic operations.
+  1.  	Insertion.
+  2. 	Deletion.
+  3.	Retrieve value at ith index.
+
+Strengths
+  1.	Retrieval of any value from an array has a constant time complexity.
+  		Because, an array is a contiguous location and retrieval is done on (base pointer + ith location).
+  2.	Insertion at back is always a constant time operation O (1).
+  3.	Deletion at back is always a constant time operation O (1).
+Limitations
+  1.	Cannot have a variable size declared array, need to provide a constant size.
+  2.	Insertion at ith place takes much time as compare to linked list which has O (1) time complexity, because an array has to reshuffle all its members.
+  3.	Same with deletion as well.
