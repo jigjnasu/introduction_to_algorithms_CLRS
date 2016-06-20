@@ -1,0 +1,6 @@
+Sorting Example:
+The first example which is poping up in my mind is a dictionary.
+In dictionary every word is alphabetically sorted out.
+
+Convex Hull example:
+No idea.
