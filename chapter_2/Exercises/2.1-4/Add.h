@@ -44,19 +44,8 @@ void Add<T>::AddBits(const std::vector<T>& A,
 	bool carry = false;
 	for (std::size_t i = 0; i < A.size(); ++i) {
 		const int count = m_countOnes(A[i], B[i], carry);
-		if (3 == count) {
-			C.push_back(1);
-			carry = true;
-		} else if (2 == count) {
-			C.push_back(0);
-			carry = true;
-		} else if (1 == count) {
-			C.push_back(1);
-			carry = false;
-		} else {
-			C.push_back(0);
-			carry = false;
-		}
+		C.push_back(count % 2);
+		carry = count / 2;
 	}
 
 	if (carry)
