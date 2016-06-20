@@ -1,0 +1,15 @@
+Question:
+1.2-1
+Give an example of an application that requires algorithmic content at the application
+level, and discuss the function of the algorithms involved.
+
+Answer:
+Cricket Player statistics Application.
+
+ Algorithms involved
+     1.			Calculating the average of the player from all previous games, representing the data into chart as well.
+     2.			Finding out the maximum number of runs scored or wicket took.
+     3.			Sorting of best innings.
+     4.			Compression of scores with other player.
+	 5.			And the list is so long as well.....
+ 

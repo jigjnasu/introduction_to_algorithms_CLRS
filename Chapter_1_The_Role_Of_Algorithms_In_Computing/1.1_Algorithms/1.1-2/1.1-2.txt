@@ -1,0 +1,6 @@
+Question:
+1.1-2
+Other than speed, what other measures of efficiency might one use in a real-world setting?
+
+Answer:
+Other than time complexity (speed) people also consider space complexity (memory space) as well to design an efficient algorithm.
