@@ -1,0 +1,1 @@
+Other than time complexity (speed) people also consider space complexity (memory space) as well to design an efficient algorithm.
