@@ -1,3 +1,9 @@
+Question:
+1.1-3
+Select a data structure that you have seen previously, and discuss its strengths and limitations.
+
+
+Answer:
 Let's take example of an array, based on C / C++, language.
 
 Let's most of the data structure have four basic operations.

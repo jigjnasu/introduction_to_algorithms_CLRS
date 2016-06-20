@@ -1,3 +1,9 @@
+Question:
+1.1-5
+Come up with a real-world problem in which only the best solution will do. Then
+come up with one in which a solution that is “approximately” the best is good enough.
+
+Answer:
 Best solution example.
    The robot which is performing a surgery by a doctor thousands of miles apart, in this case if the software performs any inaccuracies or has any defect can be fatal to the life of the patient.
 
