@@ -21,8 +21,8 @@ void test_insertion_sort() {
 	InsertionSort<int> sort;
 	sort.Sort(V);
 	common.PrintVector(V);
-	sort.SortReverse(V);
-	common.PrintVector(V);	
+	sort.SortReverse(V);	
+	common.PrintVector(V);
 }
 
 void test_merge_sort() {
@@ -37,7 +37,7 @@ void test_merge_sort() {
 }
 
 int main() {
-	//test_insertion_sort();
-	test_merge_sort();
+	test_insertion_sort();
+	//test_merge_sort();
 	return 0;
 }
