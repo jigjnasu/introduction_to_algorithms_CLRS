@@ -6,6 +6,12 @@
   Date: June 10th, 2016
  */
 
+/*
+  2.1-2
+  Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasing
+  order.
+ */
+
 #ifndef DATA_STRUCTURE_CHAPTER_2_2_1_2_INSERTION_SORT_H_
 #define DATA_STRUCTURE_CHAPTER_2_2_1_2_INSERTION_SORT_H_
 

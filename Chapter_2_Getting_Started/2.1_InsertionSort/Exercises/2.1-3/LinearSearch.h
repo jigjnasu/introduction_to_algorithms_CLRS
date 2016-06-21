@@ -6,6 +6,17 @@
   Date: June 10th, 2016
  */
 
+/*
+  2.1-3
+  Consider the searching problem:
+  Input: A sequence of n numbers A = {a1, a2, ....., an } and a value
+  Output: An index i such that D AOE or the special value NIL if does not
+  appear in A.
+  Write pseudocode for linear search, which scans through the sequence, looking
+  for v .Using a loop invariant, prove that your algorithm is correct. Make sure that
+  your loop invariant fulfills the three necessary properties.
+ */
+
 #include <vector>
 
 #ifndef DATA_STRUCTURE_CHAPTER_2_2_1_3_LINEAR_SEARH_H_
