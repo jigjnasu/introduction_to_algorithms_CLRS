@@ -6,6 +6,11 @@
   Date: June 20th, 2016
 */
 
+/*
+  What is the smallest value of n such that an algorithm whose running time is 100n2
+  runs faster than an algorithm whose running time is 2n on the same machine?
+ */
+
 #include <cstdio>
 #include <cmath>
 
