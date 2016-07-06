@@ -12,18 +12,18 @@
   No need of merging as well.
  */
   
-#ifndef DATA_STRUCTURE_CHAPTER_2_SORT_H_
-#define DATA_STRUCTURE_CHAPTER_2_SORT_H_
+#ifndef DATA_STRUCTURE_CHAPTER_2_INSERTION_MERGE_H_
+#define DATA_STRUCTURE_CHAPTER_2_INSERTION_MERGE_H_
 
 #include <vector>
 
 template <typename T>
-class Sort {
+class InsertionMerge {
 public:
-	Sort();
-	~Sort();
+	InsertionMerge();
+	~InsertionMerge();
 
-	void sort(std::vector<T>& V);
+	void Sort(std::vector<T>& V);
 
 private:
 	void m_sort(std::vector<T>& V, const int& start, const int& end);
@@ -32,18 +32,18 @@ private:
 };
 
 template <typename T>
-Sort<T>::Sort() {}
+InsertionMerge<T>::InsertionMerge() {}
 
 template <typename T>
-Sort<T>::~Sort() {}
+InsertionMerge<T>::~InsertionMerge() {}
 
 template <typename T>
-void Sort<T>::sort(std::vector<T>& V) {
+void InsertionMerge<T>::Sort(std::vector<T>& V) {
 	m_sort(V, 0, V.size() - 1);
 }
 
 template <typename T>
-void Sort<T>::m_sort(std::vector<T>& V, const int& start, const int& end) {
+void InsertionMerge<T>::m_sort(std::vector<T>& V, const int& start, const int& end) {
 	if (start < end) {
 		const int mid = (start + end) / 2;
 		m_sort(V, start, mid);
@@ -53,7 +53,7 @@ void Sort<T>::m_sort(std::vector<T>& V, const int& start, const int& end) {
 }
 
 template <typename T>
-void Sort<T>::m_merge(std::vector<T>& V, const int& start, const int& end) {
+void InsertionMerge<T>::m_merge(std::vector<T>& V, const int& start, const int& end) {
 	for (int i = start; i <= end; ++i) {
 		int j = i;
 		while (j > start && V[j - 1] > V[j]) {
@@ -64,11 +64,11 @@ void Sort<T>::m_merge(std::vector<T>& V, const int& start, const int& end) {
 }
 
 template <typename T>
-void Sort<T>::m_swap(T& A, T& B) {
+void InsertionMerge<T>::m_swap(T& A, T& B) {
 	T t = A;
 	A = B;
 	B = t;
 }
 
-#endif // DATA_STRUCTURE_CHAPTER_2_SORT_H_
+#endif // DATA_STRUCTURE_CHAPTER_2_INSERTION_MERGE_H_
 
