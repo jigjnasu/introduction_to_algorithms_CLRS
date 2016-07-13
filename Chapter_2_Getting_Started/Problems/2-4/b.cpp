@@ -9,9 +9,9 @@
 /*
   Output:
   ------------------------------------------------------------------------------------------
-  In this case, there will be no pairs, as it is a sorted Set {1, 2, 3, 4, ..... , n - 1, n}
-  So there is no chance of A[i] > A[j], where i < j
-  It will have ZERO pairs.
+  If we will sort the Set {1, 2, 3, .... , n - 1, n} in reverse order, descending
+  like S {n, n - 1, ..... , 2, 1}, it will have maximum inversion pairs.
+  It will be F(n) = [n * (n - 1)] / 2
   ------------------------------------------------------------------------------------------  
  */
 
@@ -37,7 +37,7 @@ void find_inversion_pairs(const std::vector<int>& V, std::vector<Pair>& pairs) {
 }
 
 void initialize_set(const int& n, std::vector<int>& V) {
-	for (int i = 1; i <= n; ++i)
+	for (int i = n; i >= 1; --i)
 		V.push_back(i);
 }
 
@@ -49,8 +49,8 @@ int main() {
 	find_inversion_pairs(V, pairs);
 
 	for (std::size_t i = 0; i < pairs.size(); ++i)
-		printf("i == [%d] || j == [%d] || V[i] == [%d] || V[j] == [%d]\n",
-			   pairs[i].i, pairs[i].j, V[pairs[i].i], V[pairs[i].j]);
+		printf("[%2d] -->> i == [%2d] || j == [%2d] || V[i] == [%4d] || V[j] == [%4d]\n",
+			   i + 1, pairs[i].i, pairs[i].j, V[pairs[i].i], V[pairs[i].j]);
 
 	return 0;
 }
