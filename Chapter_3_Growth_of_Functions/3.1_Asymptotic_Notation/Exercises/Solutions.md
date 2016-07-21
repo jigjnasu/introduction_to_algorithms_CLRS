@@ -9,3 +9,7 @@
 ![3.1-3](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-3_problem.png)
 ### Solution
 ![3.1-3](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-3_solution.png)
+
+![3.1-4](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-4_problem.png)
+### Solution
+![3.1-4](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-4_solution.png)
