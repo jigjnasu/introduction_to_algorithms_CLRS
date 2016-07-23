@@ -11,7 +11,7 @@
 
 ![3.2-3](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.2_Standard_Notations_And_Common_Functions/Exercises/repo/3.2-3_problem.png)
 ### Solution
-TODO
+![3.2-3](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.2_Standard_Notations_And_Common_Functions/Exercises/repo/3.2-3_solution.png)
 
 
 ![3.2-4](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.2_Standard_Notations_And_Common_Functions/Exercises/repo/3.2-4_problem.png)
