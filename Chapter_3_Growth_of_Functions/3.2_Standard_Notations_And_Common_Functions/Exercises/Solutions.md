@@ -26,7 +26,7 @@ Second one lg ^ (lgn).
 
 ![3.2-6](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.2_Standard_Notations_And_Common_Functions/Exercises/repo/3.2-6_problem.png)
 ### Solution
-TODO
+![3.2-6](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.2_Standard_Notations_And_Common_Functions/Exercises/repo/3.2-6_solution.png)
 
 
 ![3.2-7](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.2_Standard_Notations_And_Common_Functions/Exercises/repo/3.2-7_problem.png)
