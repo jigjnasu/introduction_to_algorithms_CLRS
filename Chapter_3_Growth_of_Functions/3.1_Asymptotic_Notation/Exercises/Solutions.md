@@ -22,6 +22,17 @@
 ### Solution
 ![3.1-5](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-5_solution.png)
 
+
 ![3.1-6](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-6_problem.png)
 ### Solution
 ![3.1-6](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-6_solution.png)
+
+
+![3.1-7](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-7_problem.png)
+### Solution
+TODO
+
+
+![3.1-8](https://github.com/cpp-rakesh/Algorithms/blob/master/Chapter_3_Growth_of_Functions/3.1_Asymptotic_Notation/Exercises/repo/3.1-8_problem.png)
+### Solution
+TODO
