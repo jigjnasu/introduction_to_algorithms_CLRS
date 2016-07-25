@@ -10,10 +10,11 @@ void print_vector(const std::vector<int>& V) {
 }
 
 int main() {
-	int A[] = {-9, 19, 27, -92, 17, 28, 1, 72, 38, -3, -3, -45, 34, 93, 72, -8, -81, -83, 12};
+	//int A[] = {-9, 19, 27, -92, 17, 28, 1, 72, 38, -3, -3, -45, 34, 93, 72, -8, -81, -83, 12};
+	int A[] = {-9, -82, -2, -83, -233, -82, -3, -28, -83, -23, -48, -18, -1, -38, -37, -93};
 	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
 
-	int sum = 0;
+	int sum = V[0];
 	int start = 0;
 	int end = 0;
 	
@@ -27,9 +28,7 @@ int main() {
 	printf("--------------------------- iterative ------------------------------\n");
 
 	sum = 0;
-	start = 0;
-	end = 0;
-	
+
 	MaxSubArray<int> max;
 	printf("------------------------- Divide and Conquer -----------------------\n");
 	printf("Maximum sub array sum == [%d]\n", max.Max(V));

@@ -39,7 +39,7 @@ T MaxSubArray<T>::m_max(const std::vector<T>& V, const int& start, const int& en
 		T right_sum = m_max(V, mid + 1, end);
 		T cross_sum = m_max_cross(V, start, mid, end);
 
-		return (m_find_max(left_sum, right_sum), cross_sum);
+		return m_find_max(m_find_max(left_sum, right_sum), cross_sum);
 	}
 }
 
