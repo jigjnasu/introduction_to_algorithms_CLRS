@@ -42,6 +42,8 @@ int main() {
 		std::vector<int> V;
 		generate(V, n);
 
+		//print_vector(V);
+
 		std::clock_t start_d = clock();
 		max_dnc(V);
 		std::clock_t end_d = clock();
