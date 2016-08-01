@@ -1,6 +1,8 @@
 #ifndef ALGORITHM_CHAPTER_4_4_2_MATRIX_DIVIDE_AND_CONQUER_H_
 #define ALGORITHM_CHAPTER_4_4_2_MATRIX_DIVIDE_AND_CONQUER_H_
 
+#include <cstdio>
+
 template <typename T, std::size_t size>
 class MatrixDC {
 public:
@@ -8,10 +10,10 @@ public:
 	~MatrixDC();
 
 	void Multiply(const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]);
-
+	
 private:
-	T m_multiply(const int& N, const int& pos_a, const int& pos_b,
-				 const T (&A)[size][size], const T (&B)[size][size], T (&)[size][size]);
+	T m_multiply(const int& N, const int& I, const int& J,
+				 const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]);
 };
 
 template <typename T, std::size_t size>
@@ -26,21 +28,25 @@ void MatrixDC<T, size>::Multiply(const T (&A)[size][size], const T (&B)[size][si
 }
 
 template <typename T, std::size_t size>
-T MatrixDC<T, size>::m_multiply(const int& N, const int& pos_a, const int& pos_b,
-								   const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]) {
+T MatrixDC<T, size>::m_multiply(const int& N, const int& I, const int& J,
+								const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]) {
 	if (N == 1) {
-		return (*(const_cast<int*>(&A[0][0])) + pos_a) * (*(const_cast<int*>(&B[0][0]) + pos_b)); 
+		return *(const_cast<int*>(&A[0][0]) + I) * *(const_cast<int*>(&B[0][0]) + J);
 	} else {
-		// Next N / 2th size.
+		// Half of N
 		const int H = N / 2;
-		const int pos_a_bottom_left = (size * (H - 1)) + (pos_a % size);
-		const int pos_b_bottom_left = (size * (H - 1)) + (pos_b % size);		
+		// Jump to the H + row.
+		const int O = H * size;
+		const int r = I / size;
+		const int c = J % size;
 
-		C[pos_a / size][pos_b % size] += m_multiply(H, pos_a, pos_b, A, B, C) + m_multiply(H, pos_a + H, pos_b_bottom_left, A, B, C);
-		C[pos_a / size][(pos_b + H) % size] += m_multiply(H, pos_a, pos_b + H, A, B, C) + m_multiply(H, pos_a + H, pos_b_bottom_left + H, A, B, C);
-		C[pos_a_bottom_left / size][pos_b % size] += m_multiply(H, pos_a_bottom_left, pos_b, A, B, C) + m_multiply(H, pos_a_bottom_left + H, pos_b_bottom_left, A, B, C);
-		C[pos_a_bottom_left / size][(pos_b + H) % size] += m_multiply(H, pos_a_bottom_left, pos_b + H, A, B, C) + m_multiply(H, pos_a_bottom_left + H, pos_b_bottom_left + H, A, B, C);
+		C[r][c] += m_multiply(H, I, J, A, B, C) + m_multiply(H, I + H, J + O, A, B, C);
+		C[r][c + H] += m_multiply(H, I, J + H, A, B, C) + m_multiply(H, I + H, J + O + H, A, B, C);
+		C[r + H][c] += m_multiply(H, I + O, J, A, B, C) + m_multiply(H, I + O + H, J + O, A, B, C);
+		C[r + H][c + H] += m_multiply(H, I + O, J + H, A, B, C) + m_multiply(H, I + O + H, J + O + H, A, B, C);	
 	}
+
+	return 0;
 }
 
 #endif // ALGORITHM_CHAPTER_4_4_2_MATRIX_DIVIDE_AND_CONQUER_H_
