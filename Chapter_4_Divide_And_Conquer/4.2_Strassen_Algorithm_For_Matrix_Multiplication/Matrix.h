@@ -26,7 +26,7 @@ template <typename T, std::size_t m_a, std::size_t n_a, std::size_t m_b, std::si
 template <typename T, std::size_t m_a, std::size_t n_a, std::size_t m_b, std::size_t n_b>
 	void Matrix<T, m_a, n_a, m_b, n_b>::Multiply(const T A[m_a][n_a], const T B[m_b][n_b], T(&C)[m_a][n_b]) {
 	if (n_a != m_b) {
-		printf("Can't multipy the matrices as first matrix column not equal to second matrix row [%d] != [%d]\n", n_a, m_b);
+		printf("Can't multipy the matrices as first matrix column not equal to second matrix row [%lu] != [%lu]\n", n_a, m_b);
 		return;
 	}
 
