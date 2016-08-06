@@ -14,6 +14,9 @@
   Third:  Second, problem is a non dynamic example, a divide and conquer problem with recursion.
   		  But if we can memoize the sub results we can make this problem a dyanmic problem.
 		  we will try to solve the second problem with DP (dynamic programming).
+
+  Author: Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: August 6th, 2016
  */
 
 /*
