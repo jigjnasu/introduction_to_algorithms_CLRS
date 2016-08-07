@@ -88,7 +88,7 @@ void test_third() {
 }
 
 int main() {
-	const int N = 40;
+	const int N = 100;
 	printf("-------------- N ===== [%d] -------------------------\n", N);
 	printf("-------------- First Method -------------------------\n");
 	std::clock_t start = clock();
