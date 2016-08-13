@@ -47,13 +47,13 @@ void test_2() {
 	int B[N][N] = { {5, 6},
 					{7, 8} };
 	int C1[N][N] = {0};
-	int C2[N][N] = {0};	
+	int C2[N][N] = {0};
 
 	print_matrix<N, N>(A);
 	print_matrix<N, N>(B);	
 	
 	multiply_matrices<N>(A, B, C1);
-	multiply_divide_and_conquer<N>(A, B, C2);			
+	multiply_divide_and_conquer<N>(A, B, C2);
 }
 
 void test_4() {
@@ -68,13 +68,13 @@ void test_4() {
 					{25, 26, 27, 28},
 					{29, 30, 31, 32} };
 	int C1[N][N] = {0};
-	int C2[N][N] = {0};	
+	int C2[N][N] = {0};
 
 	print_matrix<N, N>(A);
 	print_matrix<N, N>(B);	
 	
 	multiply_matrices<N>(A, B, C1);
-	multiply_divide_and_conquer<N>(A, B, C2);		
+	multiply_divide_and_conquer<N>(A, B, C2);
 }
 
 void test_8() {
@@ -97,13 +97,13 @@ void test_8() {
 					{113, 114, 115, 116, 117, 118, 119, 120},
 					{121, 122, 123, 124, 125, 126, 127, 128} };
 	int C1[N][N] = {0};
-	int C2[N][N] = {0};	
+	int C2[N][N] = {0};
 
 	print_matrix<N, N>(A);
 	print_matrix<N, N>(B);	
 	
 	multiply_matrices<N>(A, B, C1);
-	multiply_divide_and_conquer<N>(A, B, C2);	
+	multiply_divide_and_conquer<N>(A, B, C2);
 }
 
 void test_16() {
@@ -142,13 +142,13 @@ void test_16() {
 					{481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496},
 					{497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512} };
 	int C1[N][N] = {0};
-	int C2[N][N] = {0};	
+	int C2[N][N] = {0};
 
 	print_matrix<N, N>(A);
 	print_matrix<N, N>(B);	
 	
 	multiply_matrices<N>(A, B, C1);
-	multiply_divide_and_conquer<N>(A, B, C2);		
+	multiply_divide_and_conquer<N>(A, B, C2);
 }
 
 int main() {
@@ -156,5 +156,6 @@ int main() {
 	test_4();
 	test_8();
 	test_16();
+	
 	return 0;
 }
