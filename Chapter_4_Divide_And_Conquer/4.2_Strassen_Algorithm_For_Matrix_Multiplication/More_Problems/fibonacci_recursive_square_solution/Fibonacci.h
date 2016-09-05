@@ -32,7 +32,7 @@ Fibonacci<T>::Fibonacci() {
 			if (r == c)
 				unity[r][c] = 1;
 	m_unity.Set(unity);
-
+	
 	T null_matrix[SIZE][SIZE] = {0};
 	m_null.Set(null_matrix);
 }
@@ -44,7 +44,7 @@ template <typename T>
 void Fibonacci<T>::Calculate(const int& N, T (&result)[SIZE][SIZE]) {
 	T base_matrix[SIZE][SIZE] = {{1, 1}, {1, 0}};
 	SquareMatrix<T, SIZE> X(base_matrix);
-
+	
 	std::vector< SquareMatrix<T, SIZE> > dictionary;
 	for (int i = 0; i <= N; ++i)
 		dictionary.push_back(m_null);

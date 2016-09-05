@@ -63,10 +63,10 @@ SquareMatrix<T, size>& SquareMatrix<T, size>::operator = (const SquareMatrix& rh
 // matrix multiplication
 template <typename T, int size>
 SquareMatrix<T, size> SquareMatrix<T, size>::operator * (const SquareMatrix& rhs) {
-		T R[size][size] = {0};
-		m_multiply(size, 0, 0, rhs.m_data, R);
-		return SquareMatrix(R);
-	}
+	T R[size][size] = {0};
+	m_multiply(size, 0, 0, rhs.m_data, R);
+	return SquareMatrix(R);
+}
 
 // comparission matrix operator
 template <typename T, int size>
@@ -113,7 +113,7 @@ T SquareMatrix<T, size>::m_multiply(const int& N, const int& I, const int& J,
 	} else {
 		const int H = N / 2;
 		const int O = H * size;
-
+		
 		const int r = I / size;
 		const int c = J % size;
 		R[r][c] += m_multiply(H, I, J, RHS, R) + m_multiply(H, I + H, J + O, RHS, R);
