@@ -1,8 +1,22 @@
+#include "Matrix.h"
+#include "MatrixDivideAndConquer.h"
 #include "SquareMatrix.h"
 #include "Strassen.h"
 #include <cstdio>
 #include <vector>
 #include <ctime>
+
+template <std::size_t size>
+void print_matrix(const int (&matrix)[size][size]) {
+    printf("--------------------------------------------------------------------------------\n");
+    for (std::size_t r = 0; r < size; ++r) {
+	for (std::size_t c = 0; c < size; ++c) {
+	    printf("%8d  ", matrix[r][c]);
+	}
+	printf("\n");
+    }
+    printf("--------------------------------------------------------------------------------\n");    
+}
 
 std::vector<int> get_row(const int& start, const int& n) {
     std::vector <int> row;
@@ -12,6 +26,133 @@ std::vector<int> get_row(const int& start, const int& n) {
 	
     return row;
 }
+
+template <std::size_t size>
+void get_data(const int& start, int (&R)[size][size]) {
+    for (int i = 0; i < size * size; ++i)
+	*(&R[0][0] + i) = i + start;
+}
+
+void test_normal_2() {
+    const int n = 2;
+    int A[n][n] = {0};
+    int B[n][n] = {0};
+    int C[n][n] = {0};    
+    get_data(1, A);
+    get_data((n * n) + 1, B);
+
+    print_matrix(A);
+    print_matrix(B);
+    Matrix<int, n, n, n, n> matrix;
+    matrix.Multiply(A, B, C);
+    print_matrix(C);
+}
+
+void test_normal_4() {
+    const int n = 4;
+    int A[n][n] = {0};
+    int B[n][n] = {0};
+    int C[n][n] = {0};    
+    get_data(1, A);
+    get_data((n * n) + 1, B);    
+
+    print_matrix(A);
+    print_matrix(B);
+    Matrix<int, n, n, n, n> matrix;
+    matrix.Multiply(A, B, C);
+    print_matrix(C);
+}
+
+void test_normal_8() {
+    const int n = 8;
+    int A[n][n] = {0};
+    int B[n][n] = {0};
+    int C[n][n] = {0};    
+    get_data(1, A);
+    get_data((n * n) + 1, B);        
+
+    print_matrix(A);
+    print_matrix(B);
+    Matrix<int, n, n, n, n> matrix;
+    matrix.Multiply(A, B, C);
+    print_matrix(C);
+}
+
+void test_normal_16() {
+    const int n = 16;
+    int A[n][n] = {0};
+    int B[n][n] = {0};
+    int C[n][n] = {0};    
+    get_data(1, A);
+    get_data((n * n) + 1, B);            
+
+    print_matrix(A);
+    print_matrix(B);
+    Matrix<int, n, n, n, n> matrix;
+    matrix.Multiply(A, B, C);
+    print_matrix(C);
+}
+
+void test_dnc_2() {
+    const int n = 2;
+    int A[n][n] = {0};
+    int B[n][n] = {0};
+    int C[n][n] = {0};    
+    get_data(1, A);
+    get_data((n * n) + 1, B);
+
+    print_matrix(A);
+    print_matrix(B);
+    MatrixDC<int, n> matrix;
+    matrix.Multiply(A, B, C);
+    print_matrix(C);
+}
+
+void test_dnc_4() {
+    const int n = 4;
+    int A[n][n] = {0};
+    int B[n][n] = {0};
+    int C[n][n] = {0};    
+    get_data(1, A);
+    get_data((n * n) + 1, B);    
+
+    print_matrix(A);
+    print_matrix(B);
+    MatrixDC<int, n> matrix;
+    matrix.Multiply(A, B, C);
+    print_matrix(C);
+}
+
+void test_dnc_8() {
+    const int n = 8;
+    int A[n][n] = {0};
+    int B[n][n] = {0};
+    int C[n][n] = {0};    
+    get_data(1, A);
+    get_data((n * n) + 1, B);        
+
+    print_matrix(A);
+    print_matrix(B);
+    MatrixDC<int, n> matrix;
+    matrix.Multiply(A, B, C);
+    print_matrix(C);
+}
+
+void test_dnc_16() {
+    const int n = 16;
+    int A[n][n] = {0};
+    int B[n][n] = {0};
+    int C[n][n] = {0};    
+    get_data(1, A);
+    get_data((n * n) + 1, B);            
+
+    print_matrix(A);
+    print_matrix(B);
+    MatrixDC<int, n> matrix;
+    matrix.Multiply(A, B, C);
+    print_matrix(C);
+}
+
 
 void test_strassen(const int& N) {
     std::vector< std::vector<int> > VA;
@@ -31,18 +172,42 @@ void test_strassen(const int& N) {
     C.Print();
 }
 
-void test_case() {
-    for (int i = 2; i <= 16; i *= i) {
-	printf("---------------------------------- Test Case for [%d] -------------------------------------------\n", i);
+void test_case_normal() {
+    test_normal_2();
+    test_normal_4();
+    test_normal_8();
+    test_normal_16();
+}
+
+void test_case_divide_and_conquer() {
+    test_dnc_2();
+    test_dnc_4();
+    test_dnc_8();
+    test_dnc_16();    
+}
+
+void test_case_strassen() {
+    for (int i = 2; i <= 16; i *= i)
 	test_strassen(i);
-	printf("---------------------------------- Test Case for [%d] -------------------------------------------\n\n\n\n\n\n", i);		
-    }
+}
+
+void test_case() {
+    std::clock_t start = clock();
+    test_case_normal();
+    const double normal_time = (clock() - start) / static_cast<double>(CLOCKS_PER_SEC);
+    start = clock();
+    test_case_divide_and_conquer();
+    const double dnc_time = (clock() - start) / static_cast<double>(CLOCKS_PER_SEC);
+    start = clock();
+    test_case_strassen();
+    const double strassen_time = (clock() - start) / static_cast<double>(CLOCKS_PER_SEC);
+
+    printf("Normal              execution time == [%.8f]\n", normal_time);
+    printf("Divide and Concquer execution time == [%.8f]\n", dnc_time);
+    printf("Strassen            execution time == [%.8f]\n", strassen_time);    
 }
 
 int main() {
-    std::clock_t start = clock();
     test_case();
-    printf("Execution time == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
-	
     return 0;
 }
