@@ -4,7 +4,7 @@
 #include <cstdio>
 
 template <typename T, std::size_t size>
-    class MatrixDC {
+class MatrixDC {
 public:
     MatrixDC();
     ~MatrixDC();
@@ -17,18 +17,18 @@ private:
 };
 
 template <typename T, std::size_t size>
-    MatrixDC<T, size>::MatrixDC() {}
+MatrixDC<T, size>::MatrixDC() {}
 
 template <typename T, std::size_t size>
-    MatrixDC<T, size>::~MatrixDC() {}
+MatrixDC<T, size>::~MatrixDC() {}
 
 template <typename T, std::size_t size>
-    void MatrixDC<T, size>::Multiply(const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]) {
+void MatrixDC<T, size>::Multiply(const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]) {
     m_multiply(size, 0, 0, A, B, C);
 }
 
 template <typename T, std::size_t size>
-    T MatrixDC<T, size>::m_multiply(const int& N, const int& I, const int& J,
+T MatrixDC<T, size>::m_multiply(const int& N, const int& I, const int& J,
 				    const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]) {
     if (N == 1) {
 	return *(const_cast<int*>(&A[0][0]) + I) * *(const_cast<int*>(&B[0][0]) + J);
