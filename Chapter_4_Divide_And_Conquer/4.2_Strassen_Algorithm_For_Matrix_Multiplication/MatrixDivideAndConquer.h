@@ -29,7 +29,7 @@ void MatrixDC<T, size>::Multiply(const T (&A)[size][size], const T (&B)[size][si
 
 template <typename T, std::size_t size>
 T MatrixDC<T, size>::m_multiply(const int& N, const int& I, const int& J,
-				    const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]) {
+				const T (&A)[size][size], const T (&B)[size][size], T (&C)[size][size]) {
     if (N == 1) {
 	return *(const_cast<int*>(&A[0][0]) + I) * *(const_cast<int*>(&B[0][0]) + J);
     } else {
