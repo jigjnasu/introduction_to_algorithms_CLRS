@@ -5,7 +5,7 @@
 #include <cstdio>
 
 template <typename T, int size>
-class SquareMatrix {
+    class SquareMatrix {
 public:
     SquareMatrix();
     SquareMatrix(const T matrix[size][size]);
@@ -29,23 +29,23 @@ private:
 };
 
 template <typename T, int size>
-SquareMatrix<T, size>::SquareMatrix() {
+    SquareMatrix<T, size>::SquareMatrix() {
     memset(&m_data[0][0], 0, sizeof(T) * size * size);
 }
 
 template <typename T, int size>
-SquareMatrix<T, size>::SquareMatrix(const T matrix[size][size]) {
+    SquareMatrix<T, size>::SquareMatrix(const T matrix[size][size]) {
     for (int r = 0; r < size; ++r)
         for (int c = 0; c < size; ++c)
             m_data[r][c] = matrix[r][c];
 }
 
 template <typename T, int size>
-SquareMatrix<T,	size>::~SquareMatrix() {}
+    SquareMatrix<T,	size>::~SquareMatrix() {}
 
 // copy constructor
 template <typename T, int size>
-SquareMatrix<T, size>::SquareMatrix(const SquareMatrix& mat) {
+    SquareMatrix<T, size>::SquareMatrix(const SquareMatrix& mat) {
     for (int r = 0; r < size; ++r)
         for (int c = 0; c < size; ++c)
             m_data[r][c] = mat.m_data[r][c];
@@ -53,7 +53,7 @@ SquareMatrix<T, size>::SquareMatrix(const SquareMatrix& mat) {
 
 // copy assignment operator
 template <typename T, int size>
-SquareMatrix<T, size>& SquareMatrix<T, size>::operator = (const SquareMatrix& rhs) {
+    SquareMatrix<T, size>& SquareMatrix<T, size>::operator = (const SquareMatrix& rhs) {
     for (int r = 0; r < size; ++r)
         for (int c = 0; c < size; ++c)
             m_data[r][c] = rhs.m_data[r][c];
@@ -61,16 +61,16 @@ SquareMatrix<T, size>& SquareMatrix<T, size>::operator = (const SquareMatrix& rh
 }
 
 // matrix multiplication
-template <typename T, int size>
-SquareMatrix<T, size> SquareMatrix<T, size>::operator * (const SquareMatrix& rhs) {
-    T R[size][size] = {0};
-    m_multiply(size, 0, 0, rhs.m_data, R);
-    return SquareMatrix(R);
-}
+    template <typename T, int size>
+    SquareMatrix<T, size> SquareMatrix<T, size>::operator * (const SquareMatrix& rhs) {
+        T R[size][size] = {0};
+        m_multiply(size, 0, 0, rhs.m_data, R);
+        return SquareMatrix(R);
+    }
 
 // comparission matrix operator
 template <typename T, int size>
-bool SquareMatrix<T, size>::operator == (const SquareMatrix& rhs) {
+        bool SquareMatrix<T, size>::operator == (const SquareMatrix& rhs) {
     for (int r = 0; r < size; ++r)
         for (int c = 0; c < size; ++c)
             if (m_data[r][c] != rhs.m_data[r][c])
@@ -79,14 +79,14 @@ bool SquareMatrix<T, size>::operator == (const SquareMatrix& rhs) {
 }
 
 template <typename T, int size>
-void SquareMatrix<T, size>::Set(const T (&matrix)[size][size]) {
+        void SquareMatrix<T, size>::Set(const T (&matrix)[size][size]) {
     for (int r = 0; r < size; ++r)
         for (int c = 0; c < size; ++c)
             m_data[r][c] = matrix[r][c];
 }
 
 template <typename T, int size>
-void SquareMatrix<T, size>::Get(T (&result)[size][size]) {
+    void SquareMatrix<T, size>::Get(T (&result)[size][size]) {
     for (int r = 0; r < size; ++r)
         for (int c = 0; c < size; ++c)
             result[r][c] = m_data[r][c];
@@ -94,7 +94,7 @@ void SquareMatrix<T, size>::Get(T (&result)[size][size]) {
 
 // Print the matrix
 template <typename T, int size>
-void SquareMatrix<T, size>::Print() const {
+    void SquareMatrix<T, size>::Print() const {
     printf("----------------------------------------------------------------------------------\n");
     for (int r = 0; r < size; ++r) {
         for (int c = 0; c < size; ++c)
@@ -106,8 +106,8 @@ void SquareMatrix<T, size>::Print() const {
 
 //Divide and conquer matrix multiplication implementation
 template <typename T, int size>
-T SquareMatrix<T, size>::m_multiply(const int& N, const int& I, const int& J,
-                                    const T (&RHS)[size][size], T (&R)[size][size]) {
+    T SquareMatrix<T, size>::m_multiply(const int& N, const int& I, const int& J,
+                                        const T (&RHS)[size][size], T (&R)[size][size]) {
     if (N == 1) {
         return *(&m_data[0][0] + I) * *(&RHS[0][0] + J);
     } else {
