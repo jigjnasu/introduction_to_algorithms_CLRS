@@ -4,13 +4,13 @@
 
 /*
   ------------------ RESULT ------------------------
-  Insertion Sort Time       == [0.56900000] seconds
-  Selection Sort Time       == [0.47000000] seconds
-  Merge Sort Time           == [0.02000000] seconds
-  Bubble Sort Time          == [1.09100000] seconds
-  Quick Sort Time           == [0.01000000] seconds
-  Insertion Merge Sort Time == [0.57000000] seconds
-  Selection Merge Sort Time == [0.67000000] seconds
+  Insertion Sort Time O(n^2)       == [9.25836600] seconds
+  Selection Sort Time O(n^2)       == [8.94840200] seconds
+  Merge Sort Time     O(nlg(n))    == [0.10700800] seconds
+  Bubble Sort Time    O(n^2)       == [20.97214500] seconds
+  Quick Sort Time     O(nlg(n))    == [0.02332800] seconds
+  Insertion Merge Sort Time        == [10.41897500] seconds
+  Selection Merge Sort Time        == [10.52556500] seconds
   ------------------ RESULT ------------------------  
 */
 
@@ -57,31 +57,31 @@ int main() {
 
     std::clock_t start = clock();
     insertion_sort.Sort(V1);
-    printf("Insertion Sort Time O(n^2)       == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Insertion Sort Time O(n^2)       == [%4.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 
     start = clock();
     selection_sort.Sort(V2);
-    printf("Selection Sort Time O(n^2)       == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Selection Sort Time O(n^2)       == [%4.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 
     start = clock();
     merge_sort.Sort(V3);
-    printf("Merge Sort Time     O(nlg(n))    == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Merge Sort Time     O(nlg(n))    == [%4.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 
     start = clock();
     bubble_sort.Sort(V4);
-    printf("Bubble Sort Time    O(n^2)       == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Bubble Sort Time    O(n^2)       == [%4.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 
     start = clock();
     quick_sort.Sort(V5);
-    printf("Quick Sort Time     O(nlg(n))    == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Quick Sort Time     O(nlg(n))    == [%4.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 
     start = clock();
     insertion_merge_sort.Sort(V6);
-    printf("Insertion Merge Sort Time        == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Insertion Merge Sort Time        == [%4.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 
     start = clock();
     selection_merge_sort.Sort(V7);
-    printf("Selection Merge Sort Time        == [%.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
+    printf("Selection Merge Sort Time        == [%4.8f] seconds\n", (clock() - start) / static_cast<double>(CLOCKS_PER_SEC));
 
     return 0;
 }
