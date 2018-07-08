@@ -11,29 +11,32 @@
   Quick Sort Time     O(nlg(n))    == [0.02332800] seconds
   Insertion Merge Sort Time        == [10.41897500] seconds
   Selection Merge Sort Time        == [10.52556500] seconds
-  ------------------ RESULT ------------------------  
+  ------------------ RESULT ------------------------
 */
 
-#include "Insertion.h"
-#include "Selection.h"
-#include "Merge.h"
-#include "Bubble.h"
-#include "Quick.h"
-#include "InsertionMerge.h"
-#include "SelectionMerge.h"
+#include "insertion.h"
+#include "selection.h"
+#include "merge.h"
+#include "bubble.h"
+#include "quick.h"
+#include "insertion_merge.h"
+#include "selection_merge.h"
 #include <cstdio>
 #include <ctime>
 #include <cstdlib>
+#include <random>
 
 void print(const std::vector<int>& V) {
     printf("----------------------------------------------------------------------------------------------------\n");
     for (std::size_t i = 0; i < V.size(); ++i)
         printf("%d ", V[i]);
-    printf("\n----------------------------------------------------------------------------------------------------\n");	
+    printf("\n----------------------------------------------------------------------------------------------------\n");
 }
 
 int random(int min, int max) {
-    return min + rand() % (max - min + 1);
+    std::random_device rd;
+    std::uniform_int_distribution<> dt(min, max);
+    return dt(rd);
 }
 
 int main() {
@@ -45,7 +48,7 @@ int main() {
     std::vector<int> V4 = V1;
     std::vector<int> V5 = V1;
     std::vector<int> V6 = V1;
-    std::vector<int> V7 = V1;	
+    std::vector<int> V7 = V1;
 
     InsertionSort<int> insertion_sort;
     SelectionSort<int> selection_sort;
