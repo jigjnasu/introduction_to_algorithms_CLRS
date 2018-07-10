@@ -15,7 +15,7 @@
 #ifndef DATA_STRUCTURE_CHAPTER_2_2_3_5_SEARCH_H_
 #define DATA_STRUCTURE_CHAPTER_2_2_3_5_SEARCH_H_
 
-#include "../../InsertionSort.h"
+#include "../2.3-4/insertion_sort.h"
 #include <vector>
 
 template <typename T>
@@ -41,7 +41,7 @@ bool Search<T>::Find(const std::vector<T>& V, const T& key) {
 	std::vector<T> set = V;
 	InsertionSort<T> sort;
 	sort.Sort(set);
-	
+
 	return m_find(set, key, 0, set.size() - 1);
 }
 

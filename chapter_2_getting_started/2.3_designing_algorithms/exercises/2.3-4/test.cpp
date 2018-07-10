@@ -6,19 +6,23 @@
   June 14th, 2016
  */
 
-#include "../../../Common/Common.h"
-#include "InsertionSort.h"
+#include "insertion_sort.h"
 #include <cstdio>
 
-int main() {
-	int A[] = {81, 83, 832, 78892, 276, 31, 37, 34, 73, 2, 374, 27, 2, 48, 5, 65, 348, 73, 2, 7438, 32, 84, 2, 4738, 32};
-	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+void print(const std::vector<int>& v) {
+    printf("-----------------------------------------------------------\n");
+    for (std::size_t i = 0; i < v.size(); ++i)
+        printf("%d ", v[i]);
+    printf("\n-----------------------------------------------------------\n");
+}
 
-	Common<int> common;
-	common.PrintVector(V);
+int main() {
+    std::vector<int> v = {81, 83, 832, 78892, 276, 31, 37, 34, 73, 2, 374, 27, 2, 48, 5, 65, 348, 73, 2, 7438, 32, 84, 2, 4738, 32};
+
+    print(v);
 	InsertionSort<int> sort;
-	sort.Sort(V);
-	common.PrintVector(V);
-		
+	sort.Sort(v);
+    print(v);
+
 	return 0;
 }

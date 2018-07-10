@@ -13,41 +13,43 @@
  */
 
 //#include "Search.h"
-#include "SearchIterative.h"
-#include "../../../Common/Common.h"
+#include "search_iterative.h"
 #include <cstdio>
-#if 0
+
+void print(const std::vector<int>& v) {
+    printf("------------------------------------------------------------------\n");
+    for (std::size_t i = 0; i < v.size(); ++i)
+        printf("%d", v[i]);
+    printf("\n------------------------------------------------------------------\n");
+}
+
 void test_search() {
-	int A[] = {89, 18, 372, 828, 1, 327, 16, 84, 3, 848, 27, 8489, 37, 34, 16, 84, 74, 266, 17, 3778, 7};
-	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
-	Common<int> common;
-	common.PrintVector(V);
+    std::vector<int> v = {89, 18, 372, 828, 1, 327, 16, 84, 3, 848, 27, 8489, 37, 34, 16, 84, 74, 266, 17, 3778, 7};
+    print(v);
 
 	Search<int> search;
 	int key = 372;
-	if (search.Find(V, key))
+	if (search.Find(v, key))
 		printf("[%d] is PRESNET in the SET\n", key);
 	else
-		printf("[%d] is NOT PRESNET in the SET\n", key);	
+		printf("[%d] is NOT PRESNET in the SET\n", key);
 }
-#endif
-void test_iterative_search() {
-	int A[] = {89, 18, 372, 828, 1, 327, 16, 84, 3, 848, 27, 8489, 37, 34, 16, 84, 74, 266, 17, 3778, 7};
-	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
-	Common<int> common;
-	common.PrintVector(V);
 
+void test_iterative_search() {
+    std::vector<int> v = {89, 18, 372, 828, 1, 327, 16, 84, 3, 848, 27, 8489, 37, 34, 16, 84, 74, 266, 17, 3778, 7};
+
+    print(v);
 	Search<int> search;
 	int key = 94;
-	if (search.Find(V, key))
+	if (search.Find(v, key))
 		printf("[%d] is PRESNET in the SET\n", key);
 	else
 		printf("[%d] is NOT PRESNET in the SET\n", key);
 }
 
 int main() {
-	//test_search();
+	test_search();
 	test_iterative_search();
-	
+
 	return 0;
 }

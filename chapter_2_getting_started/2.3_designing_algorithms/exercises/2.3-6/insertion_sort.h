@@ -5,7 +5,7 @@
   Rakesh Kumar @ cpp.rakesh@gmail.com
   June 14th, 2016
  */
-T
+
 #ifndef DATA_STRUCTURE_CHAPTER_2_2_3_6_INSERTION_SORT_H_
 #define DATA_STRUCTURE_CHAPTER_2_2_3_6_INSERTION_SORT_H_
 
