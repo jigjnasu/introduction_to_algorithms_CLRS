@@ -6,18 +6,22 @@
   Date: June 10th, 2016
  */
 
-#include "SelectionSort.h"
-#include "../../../Common/Common.h"
+#include "selection_sort.h"
+
+void print(const std::vector<int>& v) {
+    printf("----------------------------------------------------------\n");
+    for (std::size_t i = 0; i < v.size(); ++i)
+        printf("%d ", v[i]);
+    printf("\n----------------------------------------------------------\n");
+}
 
 int main() {
-	int A[] = {94, 18, 384, 828, 271, 1, 7, 938, 82234, 84, 72, 81, 84, 2, 27, 96, 284, 82, 1, 238, 27, 134, 43, 23, 12, 17};
-	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+    std::vector<int> v = {94, 18, 384, 828, 271, 1, 7, 938, 82234, 84, 72, 81, 84, 2, 27, 96, 284, 82, 1, 238, 27, 134, 43, 23, 12, 17};
 
-	Common<int> common;
-	common.PrintVector(V);
+    print(v);
 	SelectionSort<int> sort;
-	sort.Sort(V);
-	common.PrintVector(V);
-	
+	sort.Sort(v);
+    print(v);
+
 	return 0;
 }

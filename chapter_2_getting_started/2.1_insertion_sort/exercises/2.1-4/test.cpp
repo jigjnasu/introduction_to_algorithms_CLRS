@@ -6,8 +6,14 @@
   Date: June 10th, 2016
  */
 
-#include "Add.h"
-#include "../../../Common/Common.h"
+#include "add.h"
+
+void print(const std::vector<int>& v) {
+    printf("--------------------------------------------------------------\n");
+    for (std::size_t i = 0; i < v.size(); ++i)
+        printf("%d ", v[i]);
+    printf("\n--------------------------------------------------------------\n");
+}
 
 class Bits {
 public:
@@ -44,23 +50,22 @@ int main() {
 	Bits bits;
 	std::vector<int> A;
 	std::vector<int> B;
-	
+
 	bits.GetBits(A, 118);
 	bits.GetBits(B, 79);
 
-	Common<int> common;
 	printf("------------ A && B ----------------\n");
-	common.PrintVectorReverse(A);
-	common.PrintVectorReverse(B);
+    print(A);
+    print(B);
 	printf("------------ A && B ----------------\n");
 
 	Add<int> add;
 	std::vector<int> C;
 	add.AddBits(A, B, C);
 	printf("------------    C   ----------------\n");
-	common.PrintVectorReverse(C);
+    print(C);
 	printf("C in decimal == [%d]\n", bits.GetNumber(C));
 	printf("------------    C   ----------------\n");
-		
+
 	return 0;
 }

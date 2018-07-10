@@ -6,21 +6,24 @@
   Date: June 10th, 2016
  */
 
-#include "LinearSearch.h"
-#include "../../../Common/Common.h"
+#include "linear_search.h"
 #include <cstdio>
 
+void print(const std::vector<int>& v) {
+    printf("-----------------------------------------------------------\n");
+    for (std::size_t i = 0; i < v.size(); ++i)
+        printf("%d ", v[i]);
+    printf("\n-----------------------------------------------------------\n");
+}
+
 int main() {
-	int A[] = {897, 17, 13, 83, 2, 782, 72, 17, 284, 7, 381, 8482, 72, 384, 72, 1723, 72, 161, 73, 21, 1, 3, 72, 713, 72};
-	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
+    std::vector<int> v = {897, 17, 13, 83, 2, 782, 72, 17, 284, 7, 381, 8482, 72, 384, 72, 1723, 72, 161, 73, 21, 1, 3, 72, 713, 72};
 
-	Common<int> common;
-	common.PrintVector(V);
-
+    print(v);
 	LinearSearch<int> search;
-	printf("[%4d] found at [%2d] index\n", 19, search.Search(V, 19));
-	printf("[%4d] found at [%2d] index\n", 7, search.Search(V, 7));
-	printf("[%4d] found at [%2d] index\n", 8482, search.Search(V, 8482));
+	printf("[%4d] found at [%2d] index\n", 19, search.Search(v, 19));
+	printf("[%4d] found at [%2d] index\n", 7, search.Search(v, 7));
+	printf("[%4d] found at [%2d] index\n", 8482, search.Search(v, 8482));
 
 	return 0;
 }

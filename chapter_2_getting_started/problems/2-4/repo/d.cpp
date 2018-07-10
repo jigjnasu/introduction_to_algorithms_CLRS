@@ -6,15 +6,14 @@
   Date : July 14th, 2016
 */
 
-#include "Inversion.h"
+#include "inversion.h"
 #include <cstdio>
 
 int main() {
-	int A[] = {2, 3, 8, 6, 1};
-	std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
-	
+    std::vector<int> v = {2, 3, 8, 6, 1};
+
 	Inversion<int> inversion;
-	printf("Inversion count == [%d]\n", inversion.Count(V));
-	
+	printf("Inversion count == [%d]\n", inversion.Count(v));
+
 	return 0;
 }
