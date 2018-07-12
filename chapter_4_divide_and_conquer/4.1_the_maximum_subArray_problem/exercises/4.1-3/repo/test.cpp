@@ -1,5 +1,5 @@
-#include "MaxSubArray.h"
-#include "MaxSubArrayIterative.h"
+#include "max_sub_array.h"
+#include "max_sub_array_iterative.h"
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
@@ -8,7 +8,7 @@ void print_vector(const std::vector<int>& V) {
 	printf("-----------------------------------------------------------\n");
 	for (std::size_t i = 0; i < V.size(); ++i)
 		printf("%d ", V[i]);
-	printf("\n-----------------------------------------------------------\n");	
+	printf("\n-----------------------------------------------------------\n");
 }
 
 void generate(std::vector<int>& V, const int& n) {
@@ -37,8 +37,7 @@ void max_iterative(const std::vector<int>& V) {
 
 int main() {
 	int n = 2;
-	while (1)
-	{
+	while (1) {
 		std::vector<int> V;
 		generate(V, n);
 
@@ -55,7 +54,7 @@ int main() {
 		printf("-----------------------------------------------------------------------------\n");
 		printf("N == [%d] || Divide and Concquer == [%.8f] seconds || Iterative == [%.8f] seconds\n",
 			   n, (end_d - static_cast<double>(start_d)), (end_i - static_cast<double>(start_i)));
-		printf("-----------------------------------------------------------------------------\n");		
+		printf("-----------------------------------------------------------------------------\n");
 
 		if ((end_i - start_i) > (end_d - start_d))
 			break;
@@ -63,6 +62,5 @@ int main() {
 		++n;
 	}
 
-	
 	return 0;
 }
