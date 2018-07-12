@@ -7,14 +7,14 @@
   Date: August 13th, 2016
  */
 
-#include "SquareMatrix.h"
+#include "square_matrix.h"
 
 template <typename T>
 class Strassen {
 public:
 	Strassen();
 	~Strassen();
-	
+
 	SquareMatrix<T> Multiply(const SquareMatrix<T>& A, const SquareMatrix<T>& B);
 
 private:
@@ -114,7 +114,7 @@ SquareMatrix<T> Strassen<T>::m_add(SquareMatrix<T> C11,
 	std::vector< std::vector<T> > bottom = C21.Concatinate(C22).Get();
 	for (std::size_t i = 0; i < bottom.size(); ++i)
 		matrix.push_back(bottom[i]);
-	
+
 	return SquareMatrix<T>(matrix);
 }
 
