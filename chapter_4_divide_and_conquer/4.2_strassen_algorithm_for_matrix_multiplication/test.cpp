@@ -4,7 +4,7 @@
 #include "strassen.h"
 #include <cstdio>
 #include <vector>
-#include <ctime>
+#include <chrono>
 
 template <std::size_t size>
 void print_matrix(const int (&matrix)[size][size]) {
@@ -195,19 +195,20 @@ void test_case_strassen() {
 }
 
 void test_case() {
-    std::clock_t start = clock();
+    using clock = std::chrono::steady_clock;
+    clock::time_point start = clock::now();
     test_case_normal();
-    const double normal_time = (clock() - start) / static_cast<double>(CLOCKS_PER_SEC);
-    start = clock();
+    const double normal_time = std::chrono::duration<double>(clock::now() - start).count();
+    start = clock::now();
     test_case_divide_and_conquer();
-    const double dnc_time = (clock() - start) / static_cast<double>(CLOCKS_PER_SEC);
-    start = clock();
+    const double dnc_time = std::chrono::duration<double>(clock::now() - start).count();
+    start = clock::now();
     test_case_strassen();
-    const double strassen_time = (clock() - start) / static_cast<double>(CLOCKS_PER_SEC);
+    const double strassen_time = std::chrono::duration<double>(clock::now() - start).count();
 
-    printf("Normal              execution time == [%.8f]\n", normal_time);
-    printf("Divide and Concquer execution time == [%.8f]\n", dnc_time);
-    printf("Strassen            execution time == [%.8f]\n", strassen_time);
+    printf("Normal              execution time == [%16lf]\n", normal_time);
+    printf("Divide and Concquer execution time == [%16lf]\n", dnc_time);
+    printf("Strassen            execution time == [%16lf]\n", strassen_time);
 }
 
 int main() {
