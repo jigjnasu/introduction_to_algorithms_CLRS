@@ -62,37 +62,37 @@ int main() {
     clock::time_point start = clock::now();
     insertion_sort.Sort(V1);
     printf("Insertion Sort Time O(n^2)       == [%16lf] seconds\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     start = clock::now();
     selection_sort.Sort(V2);
     printf("Selection Sort Time O(n^2)       == [%16lf] seconds\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     start = clock::now();
     merge_sort.Sort(V3);
     printf("Merge Sort Time     O(nlg(n))    == [%16lf] seconds\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     start = clock::now();
     bubble_sort.Sort(V4);
     printf("Bubble Sort Time    O(n^2)       == [%16lf] seconds\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     start = clock::now();
     quick_sort.Sort(V5);
     printf("Quick Sort Time     O(nlg(n))    == [%16lf] seconds\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     start = clock::now();
     insertion_merge_sort.Sort(V6);
     printf("Insertion Merge Sort Time        == [%16lf] seconds\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     start = clock::now();
     selection_merge_sort.Sort(V7);
     printf("Selection Merge Sort Time        == [%16lf] seconds\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     return 0;
 }

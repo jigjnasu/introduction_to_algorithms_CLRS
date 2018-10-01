@@ -95,18 +95,18 @@ int main() {
     clock::time_point start = clock::now();
     test_first(N);
     printf("Execution time == [%16lf]\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     printf("-------------- Second Method ------------------------\n");
     start = clock::now();
     test_second(N);
     printf("Execution time == [%16lf]\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
 
     printf("-------------- Third Method -------------------------\n");
     start = clock::now();
     test_third<N>();
     printf("Execution time == [%16lf]\n",
-           std::chrono::duration<double>(clock::now() - start));
+           std::chrono::duration<double>(clock::now() - start).count());
     return 0;
 }
